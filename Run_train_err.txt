@@ -1,0 +1,225 @@
+java TrainHubMain -f Train_err.txt
+//// Welcome to UW Train Hub ////
+============== HUB CONTROL ==============
+1. Handle a new train arrival
+2. Remove a Cargo car from a departing Train
+3. Get the Weight of a Cargo product from all the departing trains
+4. Depart a Train
+5. Depart All the Trains in Hub
+6. Display a departing Train
+7. Display All departing Trains in Hub
+8. Move matching cargo from src train to dst train
+9. Quit
+=========================================
+Command : 7
+(Prairie du Chien)->Ethanol:3382->Steel:9197->Stone:7019->Stone:9970->Stone:5855
+(Oconomowoc)->Coal:4812->Ethanol:5300->Lumber:7258->Steel:3847->Stone:6284
+(Chicago)->Coal:6555->Coal:5991->Crude Oil:9605->Lumber:3385->Steel:8679->Steel:5383->Steel:7638->Steel:8258->Stone:2962
+(Lacrosse)->Ethanol:6340->Lumber:8452->Steel:3817
+(Green Bay)->Coal:9684->Ethanol:8875->Steel:8179
+(Milwaukee)->Stone:7645
+============== HUB CONTROL ==============
+1. Handle a new train arrival
+2. Remove a Cargo car from a departing Train
+3. Get the Weight of a Cargo product from all the departing trains
+4. Depart a Train
+5. Depart All the Trains in Hub
+6. Display a departing Train
+7. Display All departing Trains in Hub
+8. Move matching cargo from src train to dst train
+9. Quit
+=========================================
+Command : 4
+Enter the Destination of the Train : Milwaukee
+============== HUB CONTROL ==============
+1. Handle a new train arrival
+2. Remove a Cargo car from a departing Train
+3. Get the Weight of a Cargo product from all the departing trains
+4. Depart a Train
+5. Depart All the Trains in Hub
+6. Display a departing Train
+7. Display All departing Trains in Hub
+8. Move matching cargo from src train to dst train
+9. Quit
+=========================================
+Command : 7
+(Prairie du Chien)->Ethanol:3382->Steel:9197->Stone:7019->Stone:9970->Stone:5855
+(Oconomowoc)->Coal:4812->Ethanol:5300->Lumber:7258->Steel:3847->Stone:6284
+(Chicago)->Coal:6555->Coal:5991->Crude Oil:9605->Lumber:3385->Steel:8679->Steel:5383->Steel:7638->Steel:8258->Stone:2962
+(Lacrosse)->Ethanol:6340->Lumber:8452->Steel:3817
+(Green Bay)->Coal:9684->Ethanol:8875->Steel:8179
+============== HUB CONTROL ==============
+1. Handle a new train arrival
+2. Remove a Cargo car from a departing Train
+3. Get the Weight of a Cargo product from all the departing trains
+4. Depart a Train
+5. Depart All the Trains in Hub
+6. Display a departing Train
+7. Display All departing Trains in Hub
+8. Move matching cargo from src train to dst train
+9. Quit
+=========================================
+Command : 4
+Enter the Destination of the Train : Green Bay
+============== HUB CONTROL ==============
+1. Handle a new train arrival
+2. Remove a Cargo car from a departing Train
+3. Get the Weight of a Cargo product from all the departing trains
+4. Depart a Train
+5. Depart All the Trains in Hub
+6. Display a departing Train
+7. Display All departing Trains in Hub
+8. Move matching cargo from src train to dst train
+9. Quit
+=========================================
+Command : 7
+(Prairie du Chien)->Ethanol:3382->Steel:9197->Stone:7019->Stone:9970->Stone:5855
+(Oconomowoc)->Coal:4812->Ethanol:5300->Lumber:7258->Steel:3847->Stone:6284
+(Chicago)->Coal:6555->Coal:5991->Crude Oil:9605->Lumber:3385->Steel:8679->Steel:5383->Steel:7638->Steel:8258->Stone:2962
+(Lacrosse)->Ethanol:6340->Lumber:8452->Steel:3817
+============== HUB CONTROL ==============
+1. Handle a new train arrival
+2. Remove a Cargo car from a departing Train
+3. Get the Weight of a Cargo product from all the departing trains
+4. Depart a Train
+5. Depart All the Trains in Hub
+6. Display a departing Train
+7. Display All departing Trains in Hub
+8. Move matching cargo from src train to dst train
+9. Quit
+=========================================
+Command : 4
+Enter the Destination of the Train : Chicago
+============== HUB CONTROL ==============
+1. Handle a new train arrival
+2. Remove a Cargo car from a departing Train
+3. Get the Weight of a Cargo product from all the departing trains
+4. Depart a Train
+5. Depart All the Trains in Hub
+6. Display a departing Train
+7. Display All departing Trains in Hub
+8. Move matching cargo from src train to dst train
+9. Quit
+=========================================
+Command : 7
+(Prairie du Chien)->Ethanol:3382->Steel:9197->Stone:7019->Stone:9970->Stone:5855
+(Oconomowoc)->Coal:4812->Ethanol:5300->Lumber:7258->Steel:3847->Stone:6284
+(Lacrosse)->Ethanol:6340->Lumber:8452->Steel:3817
+============== HUB CONTROL ==============
+1. Handle a new train arrival
+2. Remove a Cargo car from a departing Train
+3. Get the Weight of a Cargo product from all the departing trains
+4. Depart a Train
+5. Depart All the Trains in Hub
+6. Display a departing Train
+7. Display All departing Trains in Hub
+8. Move matching cargo from src train to dst train
+9. Quit
+=========================================
+Command : 4
+Enter the Destination of the Train : Lacrosse
+============== HUB CONTROL ==============
+1. Handle a new train arrival
+2. Remove a Cargo car from a departing Train
+3. Get the Weight of a Cargo product from all the departing trains
+4. Depart a Train
+5. Depart All the Trains in Hub
+6. Display a departing Train
+7. Display All departing Trains in Hub
+8. Move matching cargo from src train to dst train
+9. Quit
+=========================================
+Command : 7
+(Prairie du Chien)->Ethanol:3382->Steel:9197->Stone:7019->Stone:9970->Stone:5855
+(Oconomowoc)->Coal:4812->Ethanol:5300->Lumber:7258->Steel:3847->Stone:6284
+============== HUB CONTROL ==============
+1. Handle a new train arrival
+2. Remove a Cargo car from a departing Train
+3. Get the Weight of a Cargo product from all the departing trains
+4. Depart a Train
+5. Depart All the Trains in Hub
+6. Display a departing Train
+7. Display All departing Trains in Hub
+8. Move matching cargo from src train to dst train
+9. Quit
+=========================================
+Command : 4
+Enter the Destination of the Train : Prairie du Chien
+============== HUB CONTROL ==============
+1. Handle a new train arrival
+2. Remove a Cargo car from a departing Train
+3. Get the Weight of a Cargo product from all the departing trains
+4. Depart a Train
+5. Depart All the Trains in Hub
+6. Display a departing Train
+7. Display All departing Trains in Hub
+8. Move matching cargo from src train to dst train
+9. Quit
+=========================================
+Command : 7
+(Oconomowoc)->Coal:4812->Ethanol:5300->Lumber:7258->Steel:3847->Stone:6284
+============== HUB CONTROL ==============
+1. Handle a new train arrival
+2. Remove a Cargo car from a departing Train
+3. Get the Weight of a Cargo product from all the departing trains
+4. Depart a Train
+5. Depart All the Trains in Hub
+6. Display a departing Train
+7. Display All departing Trains in Hub
+8. Move matching cargo from src train to dst train
+9. Quit
+=========================================
+Command : 4
+Enter the Destination of the Train : Oconomowoc
+============== HUB CONTROL ==============
+1. Handle a new train arrival
+2. Remove a Cargo car from a departing Train
+3. Get the Weight of a Cargo product from all the departing trains
+4. Depart a Train
+5. Depart All the Trains in Hub
+6. Display a departing Train
+7. Display All departing Trains in Hub
+8. Move matching cargo from src train to dst train
+9. Quit
+=========================================
+Command : 7
+There is no train in the hub.
+============== HUB CONTROL ==============
+1. Handle a new train arrival
+2. Remove a Cargo car from a departing Train
+3. Get the Weight of a Cargo product from all the departing trains
+4. Depart a Train
+5. Depart All the Trains in Hub
+6. Display a departing Train
+7. Display All departing Trains in Hub
+8. Move matching cargo from src train to dst train
+9. Quit
+=========================================
+Command : 4
+Enter the Destination of the Train : Chicago
+ERROR: Train for the destination not found (Chicago)
+============== HUB CONTROL ==============
+1. Handle a new train arrival
+2. Remove a Cargo car from a departing Train
+3. Get the Weight of a Cargo product from all the departing trains
+4. Depart a Train
+5. Depart All the Trains in Hub
+6. Display a departing Train
+7. Display All departing Trains in Hub
+8. Move matching cargo from src train to dst train
+9. Quit
+=========================================
+Command : 7
+There is no train in the hub.
+============== HUB CONTROL ==============
+1. Handle a new train arrival
+2. Remove a Cargo car from a departing Train
+3. Get the Weight of a Cargo product from all the departing trains
+4. Depart a Train
+5. Depart All the Trains in Hub
+6. Display a departing Train
+7. Display All departing Trains in Hub
+8. Move matching cargo from src train to dst train
+9. Quit
+=========================================
+Command : 

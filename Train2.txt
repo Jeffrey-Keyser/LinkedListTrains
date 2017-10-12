@@ -1,0 +1,44 @@
+Lacrosse,Coal,8477
+Lacrosse,Ethanol,2338
+Eau Claire,Ethanol,6117
+Prairie du Chien,Crude Oil,7021
+Oconomowoc,Lumber,8595
+Milwaukee,Coal,9114
+Chicago,Ethanol,2418
+Eau Claire,Ethanol,5189
+Chicago,Coal,8556
+Lacrosse,Crude Oil,9640
+Lacrosse,Lumber,6652
+Oconomowoc,Lumber,8267
+Milwaukee,Ethanol,7687
+Milwaukee,Coal,7872
+Oconomowoc,Ethanol,2500
+Lacrosse,Ethanol,8495
+Chicago,Stone,6522
+Eau Claire,Lumber,4409
+Lacrosse,Lumber,2929
+Oconomowoc,Steel,7383
+Prairie du Chien,Lumber,4897
+Prairie du Chien,Stone,3318
+Chicago,Coal,7411
+Milwaukee,Steel,9988
+Eau Claire,Steel,5052
+Eau Claire,Crude Oil,8287
+Milwaukee,Stone,8072
+Oconomowoc,Lumber,9311
+Oconomowoc,Steel,6611
+Chicago,Stone,9320
+Eau Claire,Ethanol,9303
+Chicago,Ethanol,5964
+Green Bay,Lumber,8348
+Chicago,Crude Oil,2256
+Eau Claire,Coal,7479
+Prairie du Chien,Stone,4563
+Green Bay,Lumber,3433
+Green Bay,Lumber,8654
+Milwaukee,Ethanol,5036
+Milwaukee,Stone,3759
+Oconomowoc,Coal,5709
+Eau Claire,Lumber,4483
+Lacrosse,Crude Oil,7871
+Green Bay,Lumber,9904
