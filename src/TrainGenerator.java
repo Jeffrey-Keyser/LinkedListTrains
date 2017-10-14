@@ -92,7 +92,7 @@ public class TrainGenerator {
         		CargoCar car = new CargoCar(product, amount, destination);
         		train.add(car);
         		
-        		System.out.println(car.getDestination() + "" + car.getName());
+        	//	System.out.println(car.getDestination() + "" + car.getName());
         	}
         }
         catch(NumberFormatException e){

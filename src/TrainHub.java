@@ -38,8 +38,51 @@ public class TrainHub {
 	 * @param train Incoming train (list or cargo cars)
 	 */
 	public void processIncomingTrain(Train train){
+		LinkedListIterator<CargoCar> itr = train.iterator();
+		CargoCar processCar = itr.next();
+	//	trains.add(new Train(train.removeCargo(processCar.getDestination()).getDestination()));
+		
+		
+		for (int i = 1; i < train.numCargoCars(); i++)
+		{
+			if (itr.hasNext())
+			{
+			processCar = itr.next();
+			}
+			
+			try
+			{
+			if (findTrain(processCar.getDestination()) == null)
+				trains.add(new Train(train.removeCargo(processCar.getDestination()).getDestination()));
+			else 
+				findTrain(processCar.getDestination()).add(train.removeCargo(processCar.getDestination()));
+				// findTrain(processCar.getDestination()).add(processCar);
+
+			
+			
+			if (processCar != null)
+				System.out.println(processCar.getName() + "  " + processCar.getDestination());
+			
+			System.out.println();
+			for (int m = 1; m <= trains.size(); m++)
+			{
+				if (trains.size() <= 2)
+				{	}
+				else
+				System.out.println(trains.get(m).getDestination() + " " );
+			}
+			}
+			catch(NullPointerException e)
+			{	}
+			
+			
+			System.out.println();
+			
+		}
+		}
+
 		//TODO: implement this method
-	}
+	
 	
 	/**
 	 * This method tries to find the train in the list of trains, departing to the given destination city.
@@ -48,6 +91,21 @@ public class TrainHub {
 	 * @return  Pointer to the train if the train going to the given destination exists. Otherwise returns null.
 	 */
 	public Train findTrain(String dest){
+		try
+		{
+		for (int i = 1; i < trains.size(); i++)
+		{
+			if (trains.get(i).getDestination().equals(dest))
+			{
+				return trains.get(i);
+			}
+		}
+		}
+		catch(NullPointerException e)
+		{
+		return null;
+		}
+		return null;
 		//TODO: implement this method
 	}
 	

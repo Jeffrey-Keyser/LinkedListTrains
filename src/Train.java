@@ -91,21 +91,28 @@ public class Train implements Iterable<CargoCar> {
 	 */
 	public CargoCar removeCargo(String cargoName){
 		
-		CargoCar tempCar = new CargoCar(cargoName, 0, null);
+		CargoCar tempCar = new CargoCar("", 0, cargoName);
 		LinkedListIterator<CargoCar> itr = train.iterator();
-		int count = 0;
-				
+		int count = 0;		
+		
 		if (!train.contains(tempCar))
 			return null;
+		
 		
 		while (itr.hasNext())
 		{
 			count++;
 			CargoCar n = itr.next();
-			if (n.getName().equals(tempCar.getName()))
+			
+			try
+			{
+			if (n.getDestination().equals(tempCar.getDestination()))
 			{
 				return train.remove(count);
 			}
+			}
+			catch(NullPointerException e)
+			{	}
 		}
 			
 		return null;
