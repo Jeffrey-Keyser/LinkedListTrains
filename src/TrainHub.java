@@ -135,10 +135,15 @@ public class TrainHub {
 		Train tempTrain = null;
 		
 		while(itr.hasNext()){
+			try
+			{
 			tempTrain = itr.next();
 			
 			totalWeight = totalWeight + tempTrain.getWeight(name);
-		}
+			}
+			catch (NullPointerException e)
+		{	}
+			}
 		return totalWeight;
 	}
 	
@@ -160,12 +165,17 @@ public class TrainHub {
 		while(itr.hasNext()){
 			tempTrain = itr.next();
 			
+			try 
+			{
 			//check if current train equals the destination of removal
 			if(tempTrain.getDestination().equals(dest)){
 				//only set check true if there is a matching train
 				check = true;
 				trains.remove(count);
 			}
+			}
+			catch(NullPointerException e)
+			{	}
 			count++;
 		}
 		return check;

@@ -57,11 +57,17 @@ public class Train implements Iterable<CargoCar> {
 		
 		while(itr.hasNext())
 		{
+			try
+			{
+			
 			CargoCar n =  itr.next();
 			
 			if (n.getName().equals(cargoName)){
 				weight += n.getWeight();
 			}
+			}
+			catch(NullPointerException e)
+			{	}
 			
 		}
 		
