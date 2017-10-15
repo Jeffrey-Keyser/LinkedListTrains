@@ -81,7 +81,6 @@ public class TrainHub {
 		}
 		}
 
-		//TODO: implement this method
 	
 	
 	/**
@@ -93,6 +92,7 @@ public class TrainHub {
 	public Train findTrain(String dest){
 		try
 		{
+	//goes through train list with zero-based indexing so it starts at 1
 		for (int i = 1; i < trains.size(); i++)
 		{
 			if (trains.get(i).getDestination().equals(dest))
@@ -106,7 +106,7 @@ public class TrainHub {
 		return null;
 		}
 		return null;
-		//TODO: implement this method
+
 	}
 	
 	/**
@@ -119,7 +119,7 @@ public class TrainHub {
 	 * it returns the cargo car. Else it returns null.
 	 */
 	public CargoCar removeCargo(String dest, String name){
-		//TODO: implement this method
+		
 	}
 	
 	/**
@@ -130,7 +130,16 @@ public class TrainHub {
 	 * @return Total weight of given cargo in all departing trains.
 	 */
 	public int getWeight(String name){
-		//TODO: implement this method
+		LinkedListIterator<Train> itr = trains.iterator();
+		int totalWeight = 0;
+		Train tempTrain = null;
+		
+		while(itr.hasNext()){
+			tempTrain = itr.next();
+			
+			totalWeight = totalWeight + tempTrain.getWeight(name);
+		}
+		return totalWeight;
 	}
 	
 	/**
@@ -141,7 +150,27 @@ public class TrainHub {
 	 * @return True if train to the given destination city exists. If not, then return false. 
 	 */
 	public boolean departTrain(String dest){
-		//TODO: implement this method
+		boolean check = false;
+		LinkedListIterator<Train> itr = trains.iterator();
+		Train tempTrain = null;
+		//must keep track of where the iterator is so that position can be removed
+		int count = 0;
+		
+		//iterate through list of trains
+		while(itr.hasNext()){
+			tempTrain = itr.next();
+			
+			//check if current train equals the destination of removal
+			if(tempTrain.getDestination().equals(dest)){
+				//only set check true if there is a matching train
+				check = true;
+				trains.remove(count);
+			}
+			count++;
+		}
+		return check;
+		
+		
 	}
 	/**
 	 * This method deletes all the trains.
