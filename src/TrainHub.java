@@ -116,10 +116,29 @@ public class TrainHub {
 	 * @param dest Destination city
 	 * @param name Cargo name
 	 * @return If there is a train going to the the given destination and is carrying the given cargo, 
-	 * it returns the cargo car. Else it returns null.
+	 * it returns the cargo car. El(se it returns null.
 	 */
 	public CargoCar removeCargo(String dest, String name){
 		
+		
+		if (findTrain(dest) == null)
+			return null;
+		else
+		{
+			LinkedListIterator<CargoCar> itr = findTrain(dest).iterator();
+			CargoCar n = itr.next();
+			
+			for (int i = 0; i < findTrain(dest).numCargoCars(); i++)
+			{
+				n = itr.next();
+				if (n.getName().equals(name))
+				{
+					System.out.println(n.getDestination() + " " + n.getName());
+					return n;
+				}
+			}
+		}
+		return null;
 	}
 	
 	/**
@@ -188,9 +207,28 @@ public class TrainHub {
 	 * @return True if there was at least one train to delete. False if there was no train to delete.
 	 */
 	public boolean departAllTrains(){
-		//TODO: implement this method
+		
+		int trainSize = trains.size();
+		// Keeps the initial size of the trains array so that
+		// removing trains won't effect the for loop
+		
+		if (trainSize < 1)
+			return false;
+		
+		for (int i = 1; i <= trainSize; i++)
+		{
+			try
+			{
+			System.out.println(departTrain(trains.get(1).getDestination()));
+			// Must remove the index 1 because index 0 is null and will throw a null pointer exception
+			}
+			catch(NullPointerException e)
+			{	}
+		
+		}
+		System.out.println(trains.size());
+		return true;
 	}
-
 	/**
 	 * Display the specific train for a destination.
 	 * 
