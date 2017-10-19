@@ -39,31 +39,93 @@ public class TrainHub {
 	 */
 	public void processIncomingTrain(Train train){
 		LinkedListIterator<CargoCar> itr = train.iterator();
-		CargoCar processCar = itr.next();
+	//	CargoCar processCar = itr.next();
 	//	trains.add(new Train(train.removeCargo(processCar.getDestination()).getDestination()));
 		
+		boolean added = false;
+		int counter = 0;
 		
-		for (int i = 1; i < train.numCargoCars(); i++)
-		{
-			if (itr.hasNext())
+			while (itr.hasNext())
 			{
-			processCar = itr.next();
-			}
+			CargoCar processCar = itr.next();
+			added = false;
 			
 			try
 			{
 			if (findTrain(processCar.getDestination()) == null)
-				trains.add(new Train(train.removeCargo(processCar.getDestination()).getDestination()));
+			{
+				CargoCar tempCar = train.removeCargo(processCar.getDestination());
+				trains.add(new Train(tempCar.getDestination()));
+				findTrain(processCar.getDestination()).add(tempCar);
+				added = true;
+			}
 			else 
-				findTrain(processCar.getDestination()).add(train.removeCargo(processCar.getDestination()));
-				// findTrain(processCar.getDestination()).add(processCar);
+			{
+				
+				LinkedListIterator<CargoCar> compareIt = findTrain(processCar.getDestination()).iterator();
+				compareIt.next();
+				while (compareIt.hasNext())
+				{
+					
+					CargoCar car = compareIt.next();
+					//if the name of the car comes before at it before
+					if (processCar.getName().compareTo(car.getName()) < 0)
+					{ findTrain(processCar.getDestination()).add(counter, train.removeCargo(processCar.getDestination()));
+						added = true;
+						break;
+					}
+					
+					//if the names are the same, compare weights and add the lesser weight first
+					if (processCar.getName().compareTo(car.getName()) == 0)
+					{
+						
+						
+							
+						if (processCar.getWeight() < car.getWeight())
+						{
+						//	if (counter == 0)
+								//findTrain(processCar.getDestination()).add(0, train.removeCargo(processCar.getDestination()));
+						//	else
+								findTrain(processCar.getDestination()).add(counter , train.removeCargo(processCar.getDestination()));
+						added = true;
+						}
+						else if (compareIt.hasNext() && !compareIt.next().getName().equals(processCar.getName()))
+						{
+							findTrain(processCar.getDestination()).add(counter + 1, train.removeCargo(processCar.getDestination()));
+							added = true;
+						}
 
+						//else
+							
+							
+							
+					
+					break;
+					}
+					counter++;
+				}
+				
+				counter = 0;
+
+			}
 			
+			if (!added)
+			{
+				findTrain(processCar.getDestination()).add(train.removeCargo(processCar.getDestination()));
+			}
+				//if (!added)
+				//{
+					//findTrain(processCar.getDestination()).add(train.removeCargo(processCar.getDestination()));
+				//}
+
+
+			System.out.println();
 			
 			if (processCar != null)
 				System.out.println(processCar.getName() + "  " + processCar.getDestination());
 			
 			System.out.println();
+			
 			for (int m = 1; m <= trains.size(); m++)
 			{
 				if (trains.size() <= 2)
@@ -75,11 +137,13 @@ public class TrainHub {
 			catch(NullPointerException e)
 			{	}
 			
-			
 			System.out.println();
 			
-		}
-		}
+		
+			}
+	}
+
+		
 
 	
 	
@@ -236,7 +300,26 @@ public class TrainHub {
 	 * @return True if train to the given destination city exists. If not, then return false.
 	 */
 	public boolean displayTrain(String dest){
-		//TODO: implement this method
+		try{
+			
+			Train t = findTrain(dest);
+			System.out.print(t.numCargoCars());
+			System.out.print("(" + dest + ")");
+			LinkedListIterator<CargoCar> itr = t.iterator();
+			itr.next();
+			while(itr.hasNext()){
+				CargoCar c = itr.next();
+				System.out.print("->" + c.getName() + ":" + c.getWeight());
+			}
+			System.out.println();
+			return true;
+			
+		}catch(NullPointerException e){
+		//	e.printStackTrace();
+			System.out.print("ERROR: Train for the destination not found(" + dest + ")" );
+			return false;
+		}
+		
 	}
 
 	/**
@@ -246,7 +329,29 @@ public class TrainHub {
 	 * @return True if there is at least one train to print. False if there is no train to print.
 	 */
 	public boolean displayAllTrains(){
-		//TODO: implement this method
+		LinkedListIterator<Train> itr = trains.iterator();
+		
+
+		
+		if (trains.size() <= 1)
+			return false;
+		
+		itr.next();
+		
+		while(itr.hasNext())
+		{
+			try
+			{
+			Train n = itr.next();
+			displayTrain(n.getDestination());
+			}
+			catch(NullPointerException e)
+			{	}
+			System.out.println();
+		}
+		
+		return true;
+		
 	}
 	
 	/**
@@ -292,7 +397,9 @@ public class TrainHub {
 		
 		// 1. Find references to the node BEFORE the first matching cargo node
 		//    and a reference to the last node with matching cargo.
-
+		while(! (srcHeader.getNext() == null)){
+			
+		}
 		
 		
 		

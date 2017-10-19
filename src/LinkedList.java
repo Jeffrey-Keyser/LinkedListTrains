@@ -95,11 +95,12 @@ public class LinkedList<E> implements ListADT<E> {
 	public void add(int pos, E item) {
 		
 		Listnode<E> curr = headerNode;
+	//	curr = curr.getNext();
 		int count = 0;
 		
 		while (count != pos)
 		{
-			curr.getNext();
+			curr = curr.getNext();
 			count++;
 		}
 		curr.setNext(new Listnode( item, curr.getNext()));	
