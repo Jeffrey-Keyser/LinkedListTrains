@@ -156,6 +156,7 @@ public class LinkedList<E> implements ListADT<E> {
 	@Override
 	public E remove(int pos) {
 		Listnode<E> curr = headerNode;
+		curr.getNext();
 		int count = 0;
 		
 		while (count != pos)

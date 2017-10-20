@@ -99,6 +99,7 @@ public class Train implements Iterable<CargoCar> {
 		
 		CargoCar tempCar = new CargoCar("", 0, cargoName);
 		LinkedListIterator<CargoCar> itr = train.iterator();
+		itr.next();
 		int count = 0;		
 		
 		if (!train.contains(tempCar))
@@ -107,7 +108,7 @@ public class Train implements Iterable<CargoCar> {
 		
 		while (itr.hasNext())
 		{
-			count++;
+			
 			CargoCar n = itr.next();
 			
 			try
@@ -116,6 +117,8 @@ public class Train implements Iterable<CargoCar> {
 			{
 				return train.remove(count);
 			}
+			count++;
+
 			}
 			catch(NullPointerException e)
 			{	}

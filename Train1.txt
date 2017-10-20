@@ -8,9 +8,9 @@ Chicago,Ethanol,5007
 Oconomowoc,Coal,2120
 Lacrosse,Ethanol,6967
 Eau Claire,Ethanol,7025
-Green Bay,Crude Oil,6419
-Green Bay,Crude Oil,9067
-Green Bay,Ethanol,2123
+Green Bay,Crude Oil,6000
+Green Bay,Crude Oil,6001
+Green Bay,Crude Oil,6000
 Chicago,Steel,8944
 Lacrosse,Stone,2428
 Chicago,Ethanol,2800

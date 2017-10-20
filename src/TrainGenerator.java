@@ -72,9 +72,18 @@ public class TrainGenerator {
         String product;
         Integer amount = 0;
         
-        try{
+        
+        try
+        {
         	input = new Scanner(inFile);
+        }
+        catch(IOException e){
+        	System.out.println("Did not load");
+        	return null;
+        }
         	while(input.hasNextLine()){
+        		
+        		try{
         		String line = input.nextLine();
         		String[] parts = line.split(",");
         		
@@ -93,16 +102,17 @@ public class TrainGenerator {
         		train.add(car);
         		
         	//	System.out.println(car.getDestination() + "" + car.getName());
-        	}
-        }
+        	} 
         catch(NumberFormatException e){
         	
         }
-        catch(IOException e){
-        	System.out.println("Did not load");
-       }finally{
+
+        }
+        	
+
+        // finally{
     	   if(input != null)input.close();
-	}
+//	}
         return train;
 }
 }

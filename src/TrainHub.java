@@ -39,17 +39,17 @@ public class TrainHub {
 	 */
 	public void processIncomingTrain(Train train){
 		LinkedListIterator<CargoCar> itr = train.iterator();
-	//	CargoCar processCar = itr.next();
-	//	trains.add(new Train(train.removeCargo(processCar.getDestination()).getDestination()));
+		CargoCar nextCar = null;
 		
 		boolean added = false;
 		int counter = 0;
 		
+		// While there is another CargoCar in the loader train
 			while (itr.hasNext())
 			{
 			CargoCar processCar = itr.next();
 			added = false;
-			
+			counter = 0;
 			try
 			{
 			if (findTrain(processCar.getDestination()) == null)
@@ -76,99 +76,88 @@ public class TrainHub {
 					}
 					
 					//if the names are the same, compare weights and add the lesser weight first
-					if (processCar.getName().compareTo(car.getName()) == 0)
-					{	
-
-						// if there is another CargoCar in the train to compare to
-						while (true)
+					else if (processCar.getName().compareTo(car.getName()) == 0)
+					{				
+						// While we are within the number of total CargoCars in the train
+						while (findTrain(processCar.getDestination()).numCargoCars() > counter)
 						{
-							// Create a copy of the linked list so we can check ahead
-							LinkedListIterator<CargoCar> itr2 = findTrain(processCar.getDestination()).iterator();
-							itr2.next();
 							
-							// Iterates our duplicate linked list to the location of our compareIt linkedList
-							for (int i = 0; i < counter; i++)
-							{
-								itr2.next();
-							}
-							
-							// Stores the next CargoCar
-							CargoCar nextCar = itr2.next();
-							
+						try
+						{
+							if (compareIt.hasNext())
+								nextCar = compareIt.next();
+						
 						// If the car we are adding has weight less then the one we are comparing to, insert before	
-						if (processCar.getWeight() < car.getWeight())
+						if (processCar.getWeight() <= car.getWeight())
 						{
 						findTrain(processCar.getDestination()).add(counter , train.removeCargo(processCar.getDestination()));
 						added = true;
 						break;
 						}
+						
 						// If there is another car and the car's name doesn't equal our to one we are adding, it must be added beforet this other car
 						// also, if the nextCar has weight greater then the car we are adding, add the car before it
-						else if ((itr2.hasNext() && !nextCar.getName().equals(processCar.getName())) || processCar.getWeight() < nextCar.getWeight())
+						else if ( !nextCar.getName().equals(processCar.getName()) || processCar.getWeight() <= nextCar.getWeight() || nextCar.getName() == null)
 						{
 							findTrain(processCar.getDestination()).add(counter + 1, train.removeCargo(processCar.getDestination()));
 							added = true;
 							break;
 						}	
 						
-						// If there is another CargoCar in the list, advance the iterator and 
-						// store the car for the next loop
-						if (compareIt.hasNext())
+						counter++;
+						}
+						
+						// If a null pointer is caught, assume it is the end of the linked list and create a new CargoCar
+						// at the end of the list
+						catch (NullPointerException e)
 						{
-						car = compareIt.next();
-						{
-							// Checks the new car's weight against the one we are adding
-							if (processCar.getWeight() < car.getWeight())
-							{
 							findTrain(processCar.getDestination()).add(counter + 1, train.removeCargo(processCar.getDestination()));
 							added = true;
 							break;
-							}
 						}
 						}
-						// Otherwise break out of this loop
-						else
-							break;
 						
-						// Increment the counter
+						break;
+												
+						
+						}
+					else if (processCar.getName().compareTo(car.getName()) > 0)
+					{
 						counter++;
-						
-						}
-						
-					break;
+					//	continue;
 					}
-					counter++;
+				//	System.out.println(processCar.getDestination() + " " + processCar.getName() + " " + findTrain(processCar.getDestination()));
+
+					
+					//	if (!added)
+					//		break;
+					}
+				//	counter++;
 				}
 				
-				counter = 0;
+			//	counter = 0;
 
-			}
 			
-			if (!added)
-			{
-				findTrain(processCar.getDestination()).add(train.removeCargo(processCar.getDestination()));
-			}
-				//if (!added)
-				//{
-					//findTrain(processCar.getDestination()).add(train.removeCargo(processCar.getDestination()));
-				//}
+			
 
-
-			System.out.println();
+				if (!added)
+				{
+					findTrain(processCar.getDestination()).add(train.removeCargo(processCar.getDestination()));
+				}
 			
-			if (processCar != null)
-				System.out.println(processCar.getName() + "  " + processCar.getDestination());
 			
-			System.out.println();
+			System.out.println(processCar.getDestination() + " " + processCar.getName() + " " + findTrain(processCar.getDestination()));
+	//		LinkedListIterator<CargoCar> test = findTrain("Milwaukee").iterator();
+	//		test.next();
+	//		while (test.hasNext())
+	//		{
+	//			CargoCar thisCar = test.next();
+	//			System.out.print(thisCar.getName()  + "  " + thisCar.getWeight() + " - ");
+	//		}
+	//		System.out.println();
 			
-			for (int m = 1; m <= trains.size(); m++)
-			{
-				if (trains.size() <= 2)
-				{	}
-				else
-				System.out.println(trains.get(m).getDestination() + " " );
 			}
-			}
+			
 			catch(NullPointerException e)
 			{	}
 			
@@ -338,7 +327,6 @@ public class TrainHub {
 		try{
 			
 			Train t = findTrain(dest);
-			System.out.print(t.numCargoCars());
 			System.out.print("(" + dest + ")");
 			LinkedListIterator<CargoCar> itr = t.iterator();
 			itr.next();
