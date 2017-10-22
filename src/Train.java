@@ -55,6 +55,9 @@ public class Train implements Iterable<CargoCar> {
 		int weight = 0;
 		LinkedListIterator<CargoCar> itr = train.iterator();
 		
+		// Iterates though the entire train to find matching
+		// CargoCar products. Adds matching Cargo to a total
+		// which is printed at the end
 		while(itr.hasNext())
 		{
 			try
@@ -97,23 +100,26 @@ public class Train implements Iterable<CargoCar> {
 	 */
 	public CargoCar removeCargo(String cargoName){
 		
-		CargoCar tempCar = new CargoCar("", 0, cargoName);
+		CargoCar tempCar = new CargoCar(cargoName.toLowerCase(), 0, "");
 		LinkedListIterator<CargoCar> itr = train.iterator();
-		itr.next();
+
 		int count = 0;		
 		
+		// If the train doesn't even have the matching cargo
+		// return null before executing the method
 		if (!train.contains(tempCar))
 			return null;
 		
 		
 		while (itr.hasNext())
 		{
-			
 			CargoCar n = itr.next();
 			
 			try
 			{
-			if (n.getDestination().equals(tempCar.getDestination()))
+				
+			// Removes the first matching CargoCar found	
+			if (n.getName().toLowerCase().equals(tempCar.getName()))
 			{
 				return train.remove(count);
 			}
@@ -132,8 +138,7 @@ public class Train implements Iterable<CargoCar> {
 		
 		 LinkedListIterator<CargoCar> itr = new LinkedListIterator<CargoCar>(train.getHeaderNode());
 		 return itr;
-		//TODO: implement this method
-	}
+		 }
 
 	/**
 	 * Returns the number of cargo cars on this train.  

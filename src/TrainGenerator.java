@@ -65,6 +65,7 @@ public class TrainGenerator {
 	 * @return a train generated from a file
 	 */
 	public static Train getIncomingTrainFromFile(String filename){
+		
 		File inFile = new File(filename);
         Scanner input = null;
         Train train = new Train(null);
@@ -72,13 +73,15 @@ public class TrainGenerator {
         String product;
         Integer amount = 0;
         
-        
+        // Try loading the given file
+        // If an IOException is thrown, display the error
+        // and return null
         try
         {
         	input = new Scanner(inFile);
         }
         catch(IOException e){
-        	System.out.println("Did not load");
+        	System.out.println(Config.ERROR_FILE_READ);
         	return null;
         }
         	while(input.hasNextLine()){
@@ -87,24 +90,30 @@ public class TrainGenerator {
         		String line = input.nextLine();
         		String[] parts = line.split(",");
         		
+        		// If there are less or more than 2 intances of ','
+        		// Don't try to load that line
         		if(parts.length != 3){
         			continue;
         		}
+        		// Trim all the Strings found on the line
         		for(int i = 0; i < parts.length; i++){
         			parts[i] = parts[i].trim();
         		}
         		
+        		// Store corresponding data
         		destination = parts[0];
         		product = parts[1];
+        		// Make String of type Int
         		amount = Integer.parseInt(parts[2]);
         		
+        		// Create a new CargoCar with the given data
         		CargoCar car = new CargoCar(product, amount, destination);
         		train.add(car);
         		
-        	//	System.out.println(car.getDestination() + "" + car.getName());
-        	} 
+        		} 
         catch(NumberFormatException e){
-        	
+        	// If the parseInt line isn't of type int
+        	// Catch the NumberFormatException here 
         }
 
         }

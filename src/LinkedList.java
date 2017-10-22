@@ -77,7 +77,6 @@ public class LinkedList<E> implements ListADT<E> {
 			throw new IllegalArgumentException();
 		
 		// Create new node
-		
 		Listnode<E> newNode = new Listnode<E>(item);
 		
 		Listnode<E> curr = headerNode;
@@ -87,7 +86,6 @@ public class LinkedList<E> implements ListADT<E> {
 		{	curr = curr.getNext();	}
 		
 		curr.setNext(newNode);
-
 		}
 	
 
@@ -109,17 +107,25 @@ public class LinkedList<E> implements ListADT<E> {
 	@Override 
 	public boolean contains(E item) {
 		
-		LinkedListIterator itr = new LinkedListIterator(headerNode);
-		CargoCar checker = (CargoCar) itr.next();
+		LinkedListIterator<CargoCar> itr = new LinkedListIterator(headerNode);
+		// CargoCar checker = null;
 		CargoCar newItem =  (CargoCar) item;
 
 		while (itr.hasNext())
 		{
-			checker = (CargoCar) itr.next();
+		CargoCar checker = (CargoCar) itr.next();
 			
-			
-			if (checker.getDestination() == newItem.getDestination())
+			try
+			{
+			if (checker.getName().toLowerCase().equals(newItem.getName()))
 				return true;
+			}
+			catch(NullPointerException e)
+			{
+				
+			}
+			
+			
 		}
 		
 		return false;
@@ -156,12 +162,12 @@ public class LinkedList<E> implements ListADT<E> {
 	@Override
 	public E remove(int pos) {
 		Listnode<E> curr = headerNode;
-		curr.getNext();
+	//	curr = curr.getNext();
 		int count = 0;
 		
 		while (count != pos)
 		{
-			curr.getNext();
+			curr = curr.getNext();
 			count++;
 		}
 		
