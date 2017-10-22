@@ -233,7 +233,7 @@ public class TrainHub {
 			tempTrain = itr.next();
 			
 			// Find and store the weight of the product from the current train
-			totalWeight = totalWeight + tempTrain.getWeight(name);
+			totalWeight = totalWeight + tempTrain.getWeight(name.toLowerCase());
 			}
 			catch (NullPointerException e)
 		{	
@@ -274,7 +274,7 @@ public class TrainHub {
 			try 
 			{
 			// Check if current train equals the destination of removal
-			if(tempTrain.getDestination().equals(dest)){
+			if(tempTrain.getDestination().toLowerCase().equals(dest.toLowerCase())){
 				
 				// Only set check true if there is a matching train
 				check = true;
@@ -337,7 +337,11 @@ public class TrainHub {
 			System.out.print(Config.ENGINE_START + dest + Config.ENGINE_END);
 			while(itr.hasNext()){
 				CargoCar c = itr.next();
+				if (itr.hasNext())
 				System.out.print(Config.CARGO_LINK + c.getName() + ":" + c.getWeight());
+				else
+				System.out.println(Config.CARGO_LINK + c.getName() + ":" + c.getWeight());
+
 			}
 			return true;
 			
@@ -371,7 +375,7 @@ public class TrainHub {
 		{
 			Train n = itr.next();
 			displayTrain(n.getDestination());
-			System.out.println();
+		//	System.out.println();
 		}
 		
 		return true;
@@ -409,6 +413,7 @@ public class TrainHub {
 	 */
 	public static void moveMultipleCargoCars(Train srcTrain, Train dstTrain, String cargoName) {
 
+		
 		// get references to train header nodes
 		// get references to train header nodes
 		//Header's data is null
@@ -416,147 +421,131 @@ public class TrainHub {
 		srcHeader = srcTrain.getHeaderNode();
 		dstHeader = dstTrain.getHeaderNode();
 		
+		cargoName = cargoName.toLowerCase();
+		
 		Listnode<CargoCar> first_prev = null, first = null, last = null;
 		boolean hasFound = false;
-		//LinkedList<CargoCar> movingNode = new LinkedList();
+	
 		
 		// 1. Find references to the node BEFORE the first matching cargo node
 		//    and a reference to the last node with matching cargo.
-		//When we go throught the list we don't want to lose it
+		//When we go through the list we don't want to lose it
 		curr = srcHeader;
-		while(! (curr.getNext() == null)){
-			//finding the previous node
-			if(curr.getNext().getData().getName().equals(cargoName)){
+		while(!hasFound){
+			
+			//finding the previous node to the one we are looking for by comparing two names
+			if(curr.getNext().getData().getName().toLowerCase().equals(cargoName)){
 				
+				hasFound = true;
 				prev = curr;
 				
-			//now advance the pointer and the iteration going to see if there are any others
+				//creating a linked list to save the data too before we remove it from the train
+				first_prev = new Listnode<CargoCar>(prev.getNext().getData());
+				
+				//now advance the pointer
 				curr = curr.getNext();
-				//last one error code here
+				
+				
+				//can set last right now because so far there is only one item in the list of nodes that needs
+				//to be moved
+				last = first_prev;
+				
+				//this condition must be checked incase the desired cargo is at the end of the list
 				while(!(curr.getNext() == null)){
-				if(curr.getNext().getData().getName().equals(cargoName)){
+				if(curr.getNext().getData().getName().toLowerCase().equals(cargoName)){
+					
 					curr = curr.getNext();
+					//create a new CargoCar with the current pointer by calling the three
+					//arguement construction
+					CargoCar c = new CargoCar(curr.getData().getName()
+					,curr.getData().getWeight(), curr.getData().getName());
+					
+					//add this CargoCar to the end and update last
+					last.setNext(new Listnode<CargoCar>(c, null));
+					last = last.getNext();
+					}
+				//this saves from iterating through the entire loop
+				else{
+					break;
 				}
+				
 				}
-				//curr is now on the last node of that type
-				last = curr;	
 			}
 			
-			//if the data wasn't match keep iterating through the LinkedList
-			else{
-				curr = curr.getNext();
-			}
 			
 			
+			//if the data wasn't a match keep iterating through the train to find the matching data
+			curr = curr.getNext();	
 		}
-		
-			// NOTE : We know we can find this cargo,
-			//        so we are not going to deal with other exceptions here.
 
-		
-		
-		
-		
 		// 2. Remove from matching chain of nodes from src Train
 		//    by linking node before match to node after matching chain
-		//before we do this we much save references
-	
-		curr = prev;
-		//creating a new node to save the data too
-		Listnode<CargoCar>movingNode = new Listnode<CargoCar>(curr.getNext().getData());
-	
-		
-		//we use prev later so we must iterator with curr again
-		curr = curr.getNext();
-		
-		//we need this if statement in case the cargo car is the last in the list and nothing follows it
-		while(!(curr.getNext() == null)){
-		if(curr.getNext().getData().getName().equals(cargoName)){
-			curr = curr.getNext();
-			CargoCar c = new CargoCar(curr.getData().getName(),curr.getData().getWeight(), curr.getData().getName());
-			
-			//need another variable to traverse to make sure added at end
-			Listnode<CargoCar> trav = movingNode;
-			
-			while(!(trav.getNext() == null)){
-				trav = trav.getNext();
-			
-			}
-			trav.setNext(new Listnode<CargoCar>(c, null));
-			
-		}
-		}
 		//now remove the chain for the source train
-		prev.setNext(last.getNext());
+		prev.setNext(curr);
+	
+		
+
+		//have to reset the boolean so it works for later code
+		hasFound = false;
 
 		
-		
-	
 		// 3-1. Find reference to first matching cargo in dst Train
 		curr = dstHeader;
-		//System.out.print("got Here");
-		//System.out.print(curr.getNext().getData().getName());
 		while(!(curr.getNext() == null)){
-			
-			
 			//this while loop finds the node before the desired cargo
 			//and then sets prev to the current node
-			if(curr.getNext().getData().getName().equals(cargoName)){
+			
+			if(curr.getNext().getData().getName().toLowerCase().equals(cargoName)){
 				prev = curr;
 				hasFound = true;
 			}
+			//if it wasn't a match keep updating curr and go through the loop
 			curr = curr.getNext();
 		}
+			
 		
-			// 3-2. If found, insert them before cargo found in dst
-		//we need to traverse this chain and set the next value of the last node to the new source train
-			Listnode<CargoCar> trav = movingNode;
-			while(!(trav.getNext() == null)){
-				trav = trav.getNext();
-				}
-			
+		//if the target was found insert the chain of nodes
 			if(hasFound){
-			trav.setNext(prev.getNext());
-			prev.setNext(movingNode);
+			last.setNext(prev.getNext());
+			prev.setNext(first_prev);
 			}
-			// 3-3. If no matching cargo, add them at the end of train
 			
 			
+			
+			
+			//if the target wasn't found we need to add the CargoCar alphabetically in the list
 			if(!hasFound){
 				//we need to traverse through the train again to see where we should add the cargo
 				curr = dstHeader;
+			
 				while(!(curr.getNext() == null)){
-					if(curr.getNext().getData().getName().compareTo(cargoName) > 0){
+					//the compareTo method checks the order of the letters
+					if(curr.getNext().getData().getName().toLowerCase().compareTo(cargoName) > 0){
 						prev = curr;
 						
-						//we need to traverse this chain and set the next value of the last node to the new source train
-						trav = movingNode;
-						System.out.print(trav.getData().getName());
-						while(!(trav.getNext() == null)){
-							trav = trav.getNext();
-							}
-						trav.setNext(prev.getNext());
-						prev.setNext(movingNode);
-						
-						
+						//insert the CargoCar in the correct spot
+						last.setNext(prev.getNext());
+						prev.setNext(first_prev);
 						hasFound = true;
+						
+						//this break statement ensures we aren't iterating through the whole loop
 						break;
 					}
 					
+					//if it needs to go later in the list keep advancing curr
 					else{
 						curr = curr.getNext();
 					}
 	
 				}
+				
 				//special case if it needs to be added at the end of the list
 				if(!hasFound){
-					curr.setNext(movingNode);
+					curr.setNext(first_prev);
 				}
 				
 				
 				
 			}
-			
-			
 	}
 }

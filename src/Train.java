@@ -65,7 +65,7 @@ public class Train implements Iterable<CargoCar> {
 			
 			CargoCar n =  itr.next();
 			
-			if (n.getName().equals(cargoName)){
+			if (n.getName().toLowerCase().equals(cargoName)){
 				weight += n.getWeight();
 			}
 			}
