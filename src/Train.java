@@ -60,8 +60,6 @@ public class Train implements Iterable<CargoCar> {
 		// which is printed at the end
 		while(itr.hasNext())
 		{
-			try
-			{
 			
 			CargoCar n =  itr.next();
 			
@@ -69,13 +67,12 @@ public class Train implements Iterable<CargoCar> {
 				weight += n.getWeight();
 			}
 			}
-			catch(NullPointerException e)
-			{	}
-			
+		
+		return weight;	
 		}
 		
-		return weight;		
-	}
+			
+	
 	
 	// add cargo car at end of train
 	public void add(CargoCar cargoCar) {
@@ -114,9 +111,6 @@ public class Train implements Iterable<CargoCar> {
 		while (itr.hasNext())
 		{
 			CargoCar n = itr.next();
-			
-			try
-			{
 				
 			// Removes the first matching CargoCar found	
 			if (n.getName().toLowerCase().equals(tempCar.getName()))
@@ -125,10 +119,8 @@ public class Train implements Iterable<CargoCar> {
 			}
 			count++;
 
-			}
-			catch(NullPointerException e)
-			{	}
 		}
+		
 			
 		return null;
 		
@@ -136,7 +128,7 @@ public class Train implements Iterable<CargoCar> {
 
 	public LinkedListIterator<CargoCar> iterator() {
 		
-		 LinkedListIterator<CargoCar> itr = new LinkedListIterator<CargoCar>(train.getHeaderNode());
+		 LinkedListIterator<CargoCar> itr = new LinkedListIterator<CargoCar>(train.getHeaderNode().getNext());
 		 return itr;
 		 }
 

@@ -66,7 +66,7 @@ public class LinkedList<E> implements ListADT<E> {
 	 */
 	public LinkedListIterator<E> iterator() {
 		
-		LinkedListIterator<E> itr = new LinkedListIterator<E>(headerNode);
+		LinkedListIterator<E> itr = new LinkedListIterator<E>(headerNode.getNext());
 		return itr;
 	}
 
@@ -107,7 +107,7 @@ public class LinkedList<E> implements ListADT<E> {
 	@Override 
 	public boolean contains(E item) {
 		
-		LinkedListIterator<CargoCar> itr = new LinkedListIterator(headerNode);
+		LinkedListIterator<CargoCar> itr = (LinkedListIterator<CargoCar>) iterator();
 		// CargoCar checker = null;
 		CargoCar newItem =  (CargoCar) item;
 
@@ -140,7 +140,7 @@ public class LinkedList<E> implements ListADT<E> {
 			throw new IndexOutOfBoundsException();
 		
 		// Traverse to node with data at index pos.
-		Listnode<E> curr = headerNode;
+		Listnode<E> curr = headerNode.getNext();
 		for (int p = 0; p < pos; p++)
 			curr = curr.getNext();
 		
@@ -161,6 +161,10 @@ public class LinkedList<E> implements ListADT<E> {
 
 	@Override
 	public E remove(int pos) {
+		
+		if (pos < 0 || pos > this.size())
+			throw new IndexOutOfBoundsException();
+		
 		Listnode<E> curr = headerNode;
 	//	curr = curr.getNext();
 		int count = 0;
@@ -183,7 +187,7 @@ public class LinkedList<E> implements ListADT<E> {
 	@Override
 	public int size() {
 		
-		LinkedListIterator itr = new LinkedListIterator(headerNode);
+		LinkedListIterator itr = iterator();
 		int count = 0;
 		
 		while (itr.hasNext())
