@@ -51,7 +51,8 @@ public class TrainHub {
 			CargoCar processCar = itr.next();
 			added = false;
 			counter = 0;
-			
+			try
+			{
 			// If a train hasn't been created that corresponds to the destination given on the CargoCar
 			// Create a new train
 			if (findTrain(processCar.getDestination()) == null)
@@ -69,6 +70,8 @@ public class TrainHub {
 				// Iterate through the train with the destination
 				LinkedListIterator<CargoCar> compareIt = findTrain(processCar.getDestination()).iterator();
 				
+				// Pass the null pointer
+				compareIt.next();
 				
 				while (compareIt.hasNext())
 				{				
@@ -108,6 +111,11 @@ public class TrainHub {
 				}			
 			}
 
+			catch(NullPointerException e)
+			{ // Do nothing, can't add the null
+			}
+			
+			}
 			
 			}
 	
@@ -126,18 +134,23 @@ public class TrainHub {
 
 	// Goes through LinkedList trains collection of trains
 	// finds and returns the train corresponding to dest
-		for (int i = 0; i < trains.size(); i++)
+		for (int i = 1; i < trains.size(); i++)
 		{
+			try
+			{
 			if (trains.get(i).getDestination().toLowerCase().equals(dest.toLowerCase()))
 			{
 				return trains.get(i);
 			}
 		}
 		
-
+		catch(NullPointerException e)
+		{
+		return null;
+		}
 			// If no train is found corresponding to dest
 			// return null
-		
+		}
 		return null;
 
 	}
@@ -167,11 +180,14 @@ public class TrainHub {
 		else
 		{
 			
+			try
+			{
 			
 			LinkedListIterator<CargoCar> itr = findTrain(dest).iterator();
-			CargoCar n;
+			CargoCar n = itr.next();
 			
-			while (itr.hasNext())
+			// Iterates though the entire train's Cargo to find the product
+			for (int i = 0; i < findTrain(dest).numCargoCars(); i++)
 			{
 				n = itr.next();
 				if (n.getName().toLowerCase().equals(name))
@@ -180,13 +196,16 @@ public class TrainHub {
 					findTrain(dest).removeCargo(name);
 					return n;
 				}
+			}
 			
 			
 			}
-			
+			catch (Exception e)
+			{
+				return null;
 			}
 			
-		
+		}
 		return null;
 	}
 	
@@ -199,6 +218,11 @@ public class TrainHub {
 	 */
 	public int getWeight(String name){
 		LinkedListIterator<Train> itr = trains.iterator();
+		
+		// Advance the Iterator if there is a next so that the
+		// iterator isn't pointing to null
+		if (itr.hasNext())
+			itr.next();
 		
 		int totalWeight = 0;
 		Train tempTrain = null;
@@ -231,6 +255,7 @@ public class TrainHub {
 	public boolean departTrain(String dest){
 		boolean check = false;
 		LinkedListIterator<Train> itr = trains.iterator();
+		itr.next();
 		Train tempTrain = null;
 		// Must keep track of where the iterator is so that position can be removed
 		int count = 0;
@@ -246,6 +271,8 @@ public class TrainHub {
 		while(itr.hasNext()){
 			tempTrain = itr.next();
 			
+			try 
+			{
 			// Check if current train equals the destination of removal
 			if(tempTrain.getDestination().toLowerCase().equals(dest.toLowerCase())){
 				
@@ -254,7 +281,11 @@ public class TrainHub {
 				trains.remove(count);
 				return check;
 			}
-			
+			}
+			catch(NullPointerException e)
+			{	
+
+			}
 			count++;
 		}
 		return check;
@@ -272,14 +303,19 @@ public class TrainHub {
 		// Keeps the initial size of the trains array so that
 		// removing trains won't effect the for loop
 		
-		LinkedListIterator<Train> itr = trains.iterator();
-		
 		if (trainSize < 1)
 			return false;
 		
-		while(itr.hasNext())
+		for (int i = 1; i <= trainSize; i++)
 		{
-			departTrain(itr.next().getDestination());
+			try
+			{
+			System.out.println(departTrain(trains.get(1).getDestination()));
+			// Must remove at index 1 because index 0 is null and will throw a null pointer exception
+			}
+			catch(NullPointerException e)
+			{	}
+		
 		}
 		return true;
 	}
@@ -290,18 +326,14 @@ public class TrainHub {
 	 * @return True if train to the given destination city exists. If not, then return false.
 	 */
 	public boolean displayTrain(String dest){
+		try{
 			
 			Train t = findTrain(dest);
 			LinkedListIterator<CargoCar> itr = t.iterator();
+			itr.next();
 			
 			// Prints the train out in form
 			// (DEST)->PRODUCT:WEIGHT->PRODUCT:WEIGHT->
-			if (t.numCargoCars() == 0)
-			{
-				System.out.println(Config.ENGINE_START + dest + Config.ENGINE_END);
-				return true;
-			}
-			
 			System.out.print(Config.ENGINE_START + dest + Config.ENGINE_END);
 			while(itr.hasNext()){
 				CargoCar c = itr.next();
@@ -313,10 +345,11 @@ public class TrainHub {
 			}
 			return true;
 			
+		}catch(NullPointerException e){
+			return false;
 		}
 		
-		
-	
+	}
 
 	/**
 	 * This method is used to display all the departing trains in the train hub.
@@ -329,11 +362,13 @@ public class TrainHub {
 		
 
 		
-		if (trains.size() < 1)
+		if (trains.size() <= 1)
 		{
 			return false;
 		}
-				
+		
+		itr.next();
+		
 		// Calls the displayTrain corresponding to how many
 		// trains are in the trains linkedList
 		while(itr.hasNext())

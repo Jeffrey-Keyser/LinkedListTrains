@@ -66,7 +66,7 @@ public class LinkedList<E> implements ListADT<E> {
 	 */
 	public LinkedListIterator<E> iterator() {
 		
-		LinkedListIterator<E> itr = new LinkedListIterator<E>(headerNode.getNext());
+		LinkedListIterator<E> itr = new LinkedListIterator<E>(headerNode);
 		return itr;
 	}
 
@@ -92,10 +92,8 @@ public class LinkedList<E> implements ListADT<E> {
 	@Override
 	public void add(int pos, E item) {
 		
-		if (pos < 0 || pos >= this.size())
-			throw new IndexOutOfBoundsException();
-		
 		Listnode<E> curr = headerNode;
+	//	curr = curr.getNext();
 		int count = 0;
 		
 		while (count != pos)
@@ -109,30 +107,25 @@ public class LinkedList<E> implements ListADT<E> {
 	@Override 
 	public boolean contains(E item) {
 		
-		LinkedListIterator<CargoCar> itr = (LinkedListIterator<CargoCar>) iterator();
+		LinkedListIterator<CargoCar> itr = new LinkedListIterator(headerNode);
 		// CargoCar checker = null;
-		
-		if (item instanceof String)
-		{
-			while (itr.hasNext())
-			{
-			CargoCar checker = (CargoCar) itr.next();
-
-				if (checker.getName().toLowerCase().equals(item))
-					return true;
-				}
-		}
-		else
-		{
 		CargoCar newItem =  (CargoCar) item;
 
 		while (itr.hasNext())
 		{
 		CargoCar checker = (CargoCar) itr.next();
-
-			if (checker.getName().toLowerCase().equals(newItem.getName().toLowerCase()))
+			
+			try
+			{
+			if (checker.getName().toLowerCase().equals(newItem.getName()))
 				return true;
 			}
+			catch(NullPointerException e)
+			{
+				
+			}
+			
+			
 		}
 		
 		return false;
@@ -141,20 +134,22 @@ public class LinkedList<E> implements ListADT<E> {
 	@Override
 	public E get(int pos) {
 		
-		if (pos < 0 || pos >= this.size())	// NEED TO IMPLEMENT .SIZE()!!!
+		try 
+		{
+		if (pos < 0)	// NEED TO IMPLEMENT .SIZE()!!!
 			throw new IndexOutOfBoundsException();
 		
 		// Traverse to node with data at index pos.
-
-		Listnode<E> curr = headerNode.getNext();
-		
+		Listnode<E> curr = headerNode;
 		for (int p = 0; p < pos; p++)
 			curr = curr.getNext();
 		
 		// Return the data	(not the node)
 		return curr.getData();
 		}
-	
+		catch(NullPointerException e)
+		{	return null;	}
+	}
 
 	@Override
 	public boolean isEmpty() {
@@ -166,10 +161,6 @@ public class LinkedList<E> implements ListADT<E> {
 
 	@Override
 	public E remove(int pos) {
-		
-		if (pos < 0 || pos >= this.size())
-			throw new IndexOutOfBoundsException();
-		
 		Listnode<E> curr = headerNode;
 	//	curr = curr.getNext();
 		int count = 0;
@@ -192,7 +183,7 @@ public class LinkedList<E> implements ListADT<E> {
 	@Override
 	public int size() {
 		
-		LinkedListIterator itr = iterator();
+		LinkedListIterator itr = new LinkedListIterator(headerNode);
 		int count = 0;
 		
 		while (itr.hasNext())

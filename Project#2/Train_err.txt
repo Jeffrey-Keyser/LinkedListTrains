@@ -1,0 +1,43 @@
+Prairie du Chien,Ethanol,3382
+Oconomowoc,Steel,3847
+
+
+Chicago,Steel,8258
+Lacrosse,Ethanol,6340
+Prairie du Chien,Stone,5855
+Chicago,Coal,5991
+Green Bay      ,   Steel  ,    8179
+
+
+Eau Claire   , Steel ,, 9812
+
+Oconomowoc,Stone,9 5 5 9
+
+Chicago,Steel,7638
+Oconomowoc,Lumber,7258
+Oconomowoc,Stone,6284
+
+Eau Claire ,   Coal,3763.03
+
+
+Chicago,Stone,2962
+Chicago,Crude Oil,9605
+Prairie du Chien,Steel,9197
+Green Bay,Ethanol,8875
+
+Chicago,Lumber,3385
+Prairie du Chien,Stone,9970
+Lacrosse,Steel,3817
+
+         Prairie du Chien,Stone,7019
+
+Green Bay,Ethanol,24 22
+Milwaukee,Stone,7645
+Chicago,Steel,5383
+Chicago,Coal,6555
+		Oconomowoc,Coal,4812
+
+Lacrosse,Lumber,8452
+Green Bay,Coal,9684
+Chicago,Steel,8679
+Oconomowoc,Ethanol,5300

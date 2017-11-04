@@ -26,6 +26,9 @@ public class LinkedListIterator<T> implements Iterator<T> {
 	 * @param a reference to a List node with data. 
 	 */
 	public LinkedListIterator(Listnode<T> head) {
+		if (head == null)
+		{	}
+		else
 		curr = head;
 		
 		// TODO finish the constructor

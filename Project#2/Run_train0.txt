@@ -1,0 +1,168 @@
+java TrainHubMain Train0.txt
+//// Welcome to UW Train Hub ////
+============== HUB CONTROL ==============
+1. Handle a new train arrival
+2. Remove a Cargo car from a departing Train
+3. Get the Weight of a Cargo product from all the departing trains
+4. Depart a Train
+5. Depart All the Trains in Hub
+6. Display a departing Train
+7. Display All departing Trains in Hub
+8. Move matching cargo from src train to dst train
+9. Quit
+=========================================
+Command : 7
+(Green Bay)->Coal:3590->Coal:8832->Coal:4472->Coal:2876->Crude Oil:6829->Ethanol:3350->Lumber:4806->Lumber:4771->Lumber:6735->Steel:5371->Steel:3964->Stone:4006->Stone:5457
+(Prairie du Chien)->Coal:6300->Coal:9728->Crude Oil:3151->Crude Oil:4699->Crude Oil:5679->Crude Oil:3822->Crude Oil:5748->Ethanol:4601->Ethanol:8045->Lumber:9940->Lumber:5153->Steel:6625->Steel:4952->Steel:7818->Steel:9728->Stone:4538->Stone:9184
+(Lacrosse)->Coal:5706->Crude Oil:3560->Crude Oil:3041->Crude Oil:7598->Ethanol:6051->Ethanol:8102->Ethanol:9674->Lumber:3074->Lumber:3324->Steel:4407->Stone:7312->Stone:2047->Stone:9047
+(Eau Claire)->Coal:2355->Coal:8521->Coal:3705->Coal:8987->Coal:9724->Coal:5909->Coal:5987->Coal:2431->Coal:7779->Crude Oil:8937->Ethanol:5499->Ethanol:7965->Lumber:3124->Steel:9832->Stone:5886->Stone:5287->Stone:2462
+(Oconomowoc)->Coal:2819->Coal:6607->Lumber:5121->Lumber:9258->Steel:7701->Steel:2104->Steel:5406->Steel:9835->Steel:3900->Stone:6613->Stone:4065
+(Chicago)->Coal:8413->Lumber:8047->Lumber:9422->Steel:7392->Steel:2900->Stone:8331
+(Milwaukee)->Coal:6728->Crude Oil:7253->Lumber:7307->Lumber:3088->Lumber:7977->Lumber:9215->Steel:5953
+============== HUB CONTROL ==============
+1. Handle a new train arrival
+2. Remove a Cargo car from a departing Train
+3. Get the Weight of a Cargo product from all the departing trains
+4. Depart a Train
+5. Depart All the Trains in Hub
+6. Display a departing Train
+7. Display All departing Trains in Hub
+8. Move matching cargo from src train to dst train
+9. Quit
+=========================================
+Command : 2
+Enter the Destination of the Train : Green Bay
+Enter the Cargo Name : Coal
+============== HUB CONTROL ==============
+1. Handle a new train arrival
+2. Remove a Cargo car from a departing Train
+3. Get the Weight of a Cargo product from all the departing trains
+4. Depart a Train
+5. Depart All the Trains in Hub
+6. Display a departing Train
+7. Display All departing Trains in Hub
+8. Move matching cargo from src train to dst train
+9. Quit
+=========================================
+Command : 7
+(Green Bay)->Coal:8832->Coal:4472->Coal:2876->Crude Oil:6829->Ethanol:3350->Lumber:4806->Lumber:4771->Lumber:6735->Steel:5371->Steel:3964->Stone:4006->Stone:5457
+(Prairie du Chien)->Coal:6300->Coal:9728->Crude Oil:3151->Crude Oil:4699->Crude Oil:5679->Crude Oil:3822->Crude Oil:5748->Ethanol:4601->Ethanol:8045->Lumber:9940->Lumber:5153->Steel:6625->Steel:4952->Steel:7818->Steel:9728->Stone:4538->Stone:9184
+(Lacrosse)->Coal:5706->Crude Oil:3560->Crude Oil:3041->Crude Oil:7598->Ethanol:6051->Ethanol:8102->Ethanol:9674->Lumber:3074->Lumber:3324->Steel:4407->Stone:7312->Stone:2047->Stone:9047
+(Eau Claire)->Coal:2355->Coal:8521->Coal:3705->Coal:8987->Coal:9724->Coal:5909->Coal:5987->Coal:2431->Coal:7779->Crude Oil:8937->Ethanol:5499->Ethanol:7965->Lumber:3124->Steel:9832->Stone:5886->Stone:5287->Stone:2462
+(Oconomowoc)->Coal:2819->Coal:6607->Lumber:5121->Lumber:9258->Steel:7701->Steel:2104->Steel:5406->Steel:9835->Steel:3900->Stone:6613->Stone:4065
+(Chicago)->Coal:8413->Lumber:8047->Lumber:9422->Steel:7392->Steel:2900->Stone:8331
+(Milwaukee)->Coal:6728->Crude Oil:7253->Lumber:7307->Lumber:3088->Lumber:7977->Lumber:9215->Steel:5953
+============== HUB CONTROL ==============
+1. Handle a new train arrival
+2. Remove a Cargo car from a departing Train
+3. Get the Weight of a Cargo product from all the departing trains
+4. Depart a Train
+5. Depart All the Trains in Hub
+6. Display a departing Train
+7. Display All departing Trains in Hub
+8. Move matching cargo from src train to dst train
+9. Quit
+=========================================
+Command : 3
+Enter the Cargo Name : Crude Oil
+Total weight : Crude Oil = 60317
+============== HUB CONTROL ==============
+1. Handle a new train arrival
+2. Remove a Cargo car from a departing Train
+3. Get the Weight of a Cargo product from all the departing trains
+4. Depart a Train
+5. Depart All the Trains in Hub
+6. Display a departing Train
+7. Display All departing Trains in Hub
+8. Move matching cargo from src train to dst train
+9. Quit
+=========================================
+Command : 4
+Enter the Destination of the Train : Chicago
+============== HUB CONTROL ==============
+1. Handle a new train arrival
+2. Remove a Cargo car from a departing Train
+3. Get the Weight of a Cargo product from all the departing trains
+4. Depart a Train
+5. Depart All the Trains in Hub
+6. Display a departing Train
+7. Display All departing Trains in Hub
+8. Move matching cargo from src train to dst train
+9. Quit
+=========================================
+Command : 7
+(Green Bay)->Coal:8832->Coal:4472->Coal:2876->Crude Oil:6829->Ethanol:3350->Lumber:4806->Lumber:4771->Lumber:6735->Steel:5371->Steel:3964->Stone:4006->Stone:5457
+(Prairie du Chien)->Coal:6300->Coal:9728->Crude Oil:3151->Crude Oil:4699->Crude Oil:5679->Crude Oil:3822->Crude Oil:5748->Ethanol:4601->Ethanol:8045->Lumber:9940->Lumber:5153->Steel:6625->Steel:4952->Steel:7818->Steel:9728->Stone:4538->Stone:9184
+(Lacrosse)->Coal:5706->Crude Oil:3560->Crude Oil:3041->Crude Oil:7598->Ethanol:6051->Ethanol:8102->Ethanol:9674->Lumber:3074->Lumber:3324->Steel:4407->Stone:7312->Stone:2047->Stone:9047
+(Eau Claire)->Coal:2355->Coal:8521->Coal:3705->Coal:8987->Coal:9724->Coal:5909->Coal:5987->Coal:2431->Coal:7779->Crude Oil:8937->Ethanol:5499->Ethanol:7965->Lumber:3124->Steel:9832->Stone:5886->Stone:5287->Stone:2462
+(Oconomowoc)->Coal:2819->Coal:6607->Lumber:5121->Lumber:9258->Steel:7701->Steel:2104->Steel:5406->Steel:9835->Steel:3900->Stone:6613->Stone:4065
+(Milwaukee)->Coal:6728->Crude Oil:7253->Lumber:7307->Lumber:3088->Lumber:7977->Lumber:9215->Steel:5953
+============== HUB CONTROL ==============
+1. Handle a new train arrival
+2. Remove a Cargo car from a departing Train
+3. Get the Weight of a Cargo product from all the departing trains
+4. Depart a Train
+5. Depart All the Trains in Hub
+6. Display a departing Train
+7. Display All departing Trains in Hub
+8. Move matching cargo from src train to dst train
+9. Quit
+=========================================
+Command : 6
+Enter the Destination of the Train : Eau Claire
+(Eau Claire)->Coal:2355->Coal:8521->Coal:3705->Coal:8987->Coal:9724->Coal:5909->Coal:5987->Coal:2431->Coal:7779->Crude Oil:8937->Ethanol:5499->Ethanol:7965->Lumber:3124->Steel:9832->Stone:5886->Stone:5287->Stone:2462
+============== HUB CONTROL ==============
+1. Handle a new train arrival
+2. Remove a Cargo car from a departing Train
+3. Get the Weight of a Cargo product from all the departing trains
+4. Depart a Train
+5. Depart All the Trains in Hub
+6. Display a departing Train
+7. Display All departing Trains in Hub
+8. Move matching cargo from src train to dst train
+9. Quit
+=========================================
+Command : 7
+(Green Bay)->Coal:8832->Coal:4472->Coal:2876->Crude Oil:6829->Ethanol:3350->Lumber:4806->Lumber:4771->Lumber:6735->Steel:5371->Steel:3964->Stone:4006->Stone:5457
+(Prairie du Chien)->Coal:6300->Coal:9728->Crude Oil:3151->Crude Oil:4699->Crude Oil:5679->Crude Oil:3822->Crude Oil:5748->Ethanol:4601->Ethanol:8045->Lumber:9940->Lumber:5153->Steel:6625->Steel:4952->Steel:7818->Steel:9728->Stone:4538->Stone:9184
+(Lacrosse)->Coal:5706->Crude Oil:3560->Crude Oil:3041->Crude Oil:7598->Ethanol:6051->Ethanol:8102->Ethanol:9674->Lumber:3074->Lumber:3324->Steel:4407->Stone:7312->Stone:2047->Stone:9047
+(Eau Claire)->Coal:2355->Coal:8521->Coal:3705->Coal:8987->Coal:9724->Coal:5909->Coal:5987->Coal:2431->Coal:7779->Crude Oil:8937->Ethanol:5499->Ethanol:7965->Lumber:3124->Steel:9832->Stone:5886->Stone:5287->Stone:2462
+(Oconomowoc)->Coal:2819->Coal:6607->Lumber:5121->Lumber:9258->Steel:7701->Steel:2104->Steel:5406->Steel:9835->Steel:3900->Stone:6613->Stone:4065
+(Milwaukee)->Coal:6728->Crude Oil:7253->Lumber:7307->Lumber:3088->Lumber:7977->Lumber:9215->Steel:5953
+============== HUB CONTROL ==============
+1. Handle a new train arrival
+2. Remove a Cargo car from a departing Train
+3. Get the Weight of a Cargo product from all the departing trains
+4. Depart a Train
+5. Depart All the Trains in Hub
+6. Display a departing Train
+7. Display All departing Trains in Hub
+8. Move matching cargo from src train to dst train
+9. Quit
+=========================================
+Command : 5
+============== HUB CONTROL ==============
+1. Handle a new train arrival
+2. Remove a Cargo car from a departing Train
+3. Get the Weight of a Cargo product from all the departing trains
+4. Depart a Train
+5. Depart All the Trains in Hub
+6. Display a departing Train
+7. Display All departing Trains in Hub
+8. Move matching cargo from src train to dst train
+9. Quit
+=========================================
+Command : 7
+There is no train in the hub.
+============== HUB CONTROL ==============
+1. Handle a new train arrival
+2. Remove a Cargo car from a departing Train
+3. Get the Weight of a Cargo product from all the departing trains
+4. Depart a Train
+5. Depart All the Trains in Hub
+6. Display a departing Train
+7. Display All departing Trains in Hub
+8. Move matching cargo from src train to dst train
+9. Quit
+=========================================
+Command : 

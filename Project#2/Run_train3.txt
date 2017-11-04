@@ -1,0 +1,164 @@
+java TrainHubMain -f Train3.txt
+//// Welcome to UW Train Hub ////
+============== HUB CONTROL ==============
+1. Handle a new train arrival
+2. Remove a Cargo car from a departing Train
+3. Get the Weight of a Cargo product from all the departing trains
+4. Depart a Train
+5. Depart All the Trains in Hub
+6. Display a departing Train
+7. Display All departing Trains in Hub
+8. Move matching cargo from src train to dst train
+9. Quit
+=========================================
+Command : 7
+(Chicago)->Coal:3000->Coal:7922->Coal:7983->Coal:7206->Coal:8731->Coal:8154->Coal:4745->Coal:6145->Coal:8972->Coal:4931->Coal:8664->Coal:9504->Coal:7490->Coal:7151->Coal:4104->Coal:2969->Coal:4504->Coal:6858->Coal:8729->Coal:8494->Coal:4174->Coal:2709->Coal:7090->Coal:7122->Coal:6060->Coal:6845->Crude Oil:4951->Crude Oil:5573->Crude Oil:2302->Crude Oil:2028->Crude Oil:6037->Crude Oil:7812->Crude Oil:3788->Crude Oil:4842->Crude Oil:8916->Crude Oil:5367->Crude Oil:3975->Crude Oil:5736->Ethanol:4359->Ethanol:8196->Ethanol:3439->Ethanol:8953->Ethanol:9042->Ethanol:8806->Ethanol:4148->Ethanol:2136->Ethanol:8588->Ethanol:3446->Ethanol:4667->Ethanol:3326->Ethanol:8970->Ethanol:2192->Lumber:6510->Lumber:7505->Lumber:2300->Lumber:5516->Lumber:7604->Lumber:3215->Lumber:5390->Lumber:5275->Lumber:5228->Lumber:2208->Lumber:9342->Lumber:2006->Lumber:9824->Lumber:6481->Lumber:2706->Lumber:4764->Lumber:7615->Lumber:7888->Lumber:4638->Lumber:6254->Steel:5204->Steel:4834->Steel:5478->Steel:2908->Steel:2355->Steel:7406->Steel:3332->Steel:5308->Steel:3199->Steel:3047->Steel:9197->Steel:8781->Steel:9698->Steel:9684->Steel:7981->Stone:3009->Stone:6021->Stone:9281->Stone:5306->Stone:5627->Stone:4716->Stone:3476->Stone:3034->Stone:5726->Stone:4998->Stone:6044->Stone:2556->Stone:4988->Stone:8480->Stone:9856->Stone:5443->Stone:3890->Stone:2708->Stone:6539->Stone:8665->Stone:9482->Stone:2854
+(Eau Claire)->Coal:3702->Coal:4902->Coal:6973->Coal:3981->Coal:3714->Coal:5350->Coal:2981->Coal:4222->Coal:7132->Coal:9585->Coal:9130->Coal:6618->Coal:6329->Coal:6998->Coal:3899->Coal:5917->Coal:3479->Coal:4429->Coal:8310->Coal:3445->Coal:8983->Crude Oil:8206->Crude Oil:5302->Crude Oil:8542->Crude Oil:5831->Crude Oil:3030->Crude Oil:7043->Crude Oil:4233->Crude Oil:3114->Crude Oil:4893->Crude Oil:5204->Ethanol:7266->Ethanol:2965->Ethanol:8154->Ethanol:9631->Ethanol:9574->Ethanol:7256->Ethanol:4228->Ethanol:9571->Ethanol:2707->Ethanol:4459->Ethanol:7027->Ethanol:7753->Ethanol:4647->Ethanol:6017->Ethanol:7915->Ethanol:4789->Ethanol:4068->Ethanol:2901->Ethanol:9180->Ethanol:4883->Ethanol:7637->Ethanol:2326->Ethanol:8844->Lumber:3741->Lumber:9674->Lumber:4724->Lumber:2189->Lumber:2597->Lumber:3140->Lumber:6497->Lumber:7071->Lumber:2257->Lumber:9666->Lumber:4645->Lumber:2192->Lumber:9816->Lumber:5282->Lumber:5648->Steel:3458->Steel:9843->Steel:3634->Steel:6523->Steel:9172->Steel:7876->Steel:3688->Steel:2187->Steel:5648->Steel:6850->Steel:6422->Steel:2937->Steel:7236->Steel:4853->Steel:7869->Stone:5863->Stone:9721->Stone:6541->Stone:8817->Stone:4168->Stone:6273->Stone:5869->Stone:5818->Stone:3488->Stone:5407->Stone:5325->Stone:9618->Stone:4071->Stone:6276->Stone:9108->Stone:7083->Stone:8445->Stone:9896
+(Green Bay)->Coal:8107->Coal:9986->Coal:9170->Coal:4658->Coal:3041->Coal:3787->Coal:8358->Coal:4389->Coal:5923->Coal:3182->Coal:7422->Coal:8255->Coal:5965->Coal:2374->Coal:8891->Coal:3592->Coal:7378->Coal:6241->Coal:9140->Crude Oil:6355->Crude Oil:6240->Crude Oil:8224->Crude Oil:2393->Crude Oil:5381->Crude Oil:4387->Crude Oil:7925->Crude Oil:8886->Crude Oil:3033->Crude Oil:3648->Crude Oil:8992->Crude Oil:6055->Crude Oil:5356->Crude Oil:3465->Crude Oil:6519->Crude Oil:4967->Crude Oil:8267->Crude Oil:2303->Crude Oil:9055->Crude Oil:2675->Crude Oil:2473->Ethanol:5236->Ethanol:2452->Ethanol:2906->Ethanol:7142->Ethanol:5940->Ethanol:3209->Ethanol:4643->Ethanol:8436->Ethanol:8498->Ethanol:2098->Ethanol:6132->Lumber:2732->Lumber:2785->Lumber:2949->Lumber:8866->Lumber:9126->Lumber:6323->Lumber:9898->Lumber:6266->Lumber:7175->Lumber:2606->Lumber:5493->Lumber:8100->Steel:4191->Steel:9067->Steel:4098->Steel:7596->Steel:7157->Steel:4191->Steel:7970->Steel:4490->Steel:9685->Steel:4496->Steel:2400->Steel:2747->Steel:2810->Steel:5265->Steel:3934->Steel:2315->Steel:7936->Steel:7630->Steel:2267->Steel:2910->Steel:7418->Stone:7430->Stone:2081->Stone:6959->Stone:9323->Stone:2212->Stone:8617->Stone:3598->Stone:3429->Stone:2701->Stone:3663->Stone:6903->Stone:4526->Stone:6016->Stone:6417
+(Milwaukee)->Coal:3820->Coal:7171->Coal:7349->Coal:9848->Coal:4038->Coal:3115->Coal:2149->Coal:2613->Coal:9656->Coal:8321->Coal:8770->Coal:7374->Crude Oil:6836->Crude Oil:6410->Crude Oil:6673->Crude Oil:3607->Crude Oil:8256->Crude Oil:9000->Crude Oil:9195->Crude Oil:4761->Crude Oil:2462->Crude Oil:3788->Crude Oil:5432->Crude Oil:5025->Crude Oil:9545->Crude Oil:8249->Crude Oil:7254->Crude Oil:7925->Crude Oil:7721->Ethanol:4684->Ethanol:9503->Ethanol:9702->Ethanol:9229->Ethanol:2413->Ethanol:7110->Ethanol:3908->Ethanol:6726->Ethanol:2825->Ethanol:9595->Ethanol:6653->Ethanol:6251->Ethanol:4385->Ethanol:6613->Ethanol:7268->Lumber:5821->Lumber:2236->Lumber:6626->Lumber:4687->Lumber:4148->Lumber:6994->Lumber:4311->Lumber:2064->Lumber:8721->Lumber:7312->Lumber:7344->Lumber:6834->Lumber:4788->Lumber:8542->Lumber:9290->Lumber:8026->Steel:7148->Steel:6182->Steel:9465->Steel:7160->Steel:4738->Steel:5585->Steel:9317->Steel:4446->Steel:7679->Steel:6046->Steel:3850->Steel:8720->Steel:4872->Steel:4995->Steel:9360->Steel:7367->Steel:5182->Stone:6323->Stone:8843->Stone:9981->Stone:7895->Stone:4227->Stone:5964->Stone:2741->Stone:5065->Stone:8720->Stone:3826->Stone:2818->Stone:3316->Stone:8775->Stone:7997->Stone:8687->Stone:2544->Stone:2575->Stone:5860->Stone:9754->Stone:8921->Stone:2388
+(Prairie du Chien)->Coal:4828->Coal:5502->Coal:7461->Coal:5721->Coal:6410->Coal:3490->Coal:4737->Coal:8675->Coal:5998->Coal:2196->Coal:7343->Coal:2518->Coal:2948->Coal:8457->Coal:7464->Coal:2361->Coal:4332->Coal:9821->Coal:2854->Crude Oil:6002->Crude Oil:6355->Crude Oil:7665->Crude Oil:4644->Crude Oil:9462->Crude Oil:7838->Crude Oil:9646->Crude Oil:3892->Crude Oil:6648->Crude Oil:7777->Crude Oil:9493->Crude Oil:7137->Crude Oil:3514->Crude Oil:9417->Crude Oil:3161->Crude Oil:4120->Crude Oil:2352->Crude Oil:9667->Crude Oil:9344->Ethanol:4161->Ethanol:7694->Ethanol:6612->Ethanol:6458->Ethanol:6800->Ethanol:5417->Ethanol:2056->Ethanol:6808->Ethanol:4809->Lumber:3254->Lumber:9905->Lumber:8527->Lumber:5585->Lumber:7595->Lumber:8382->Lumber:3754->Lumber:8713->Lumber:6681->Lumber:3346->Lumber:5921->Lumber:7096->Steel:3428->Steel:3381->Steel:4833->Steel:8230->Steel:9605->Steel:3753->Steel:9062->Steel:8363->Steel:7587->Steel:6611->Steel:8055->Steel:4306->Steel:5503->Steel:5266->Steel:5942->Steel:9683->Steel:6566->Steel:5074->Steel:5150->Steel:9380->Steel:4304->Stone:7084->Stone:4472->Stone:5075->Stone:3193->Stone:9596->Stone:5050->Stone:5529->Stone:6217->Stone:9843->Stone:5107->Stone:9115->Stone:7858->Stone:6912->Stone:9536->Stone:9196->Stone:5168->Stone:4877
+(Oconomowoc)->Coal:2125->Coal:5460->Coal:7918->Coal:6107->Coal:3129->Coal:6671->Coal:8653->Coal:5631->Coal:5109->Coal:2991->Coal:7865->Coal:9096->Coal:8698->Coal:9249->Coal:8307->Coal:7740->Coal:8204->Coal:6091->Coal:3458->Coal:6833->Coal:7814->Coal:6840->Coal:2700->Coal:9961->Coal:7556->Coal:9983->Crude Oil:5844->Crude Oil:5811->Crude Oil:9511->Crude Oil:9513->Crude Oil:9670->Crude Oil:3167->Crude Oil:4561->Crude Oil:5118->Crude Oil:9625->Crude Oil:3137->Crude Oil:8769->Crude Oil:9775->Crude Oil:2148->Crude Oil:9087->Crude Oil:2850->Crude Oil:3975->Crude Oil:7387->Ethanol:8691->Ethanol:8024->Ethanol:4468->Ethanol:5446->Ethanol:5356->Ethanol:2498->Ethanol:2353->Ethanol:4129->Ethanol:3097->Ethanol:7689->Ethanol:8780->Ethanol:2165->Ethanol:4261->Ethanol:4989->Ethanol:9965->Ethanol:7547->Lumber:7352->Lumber:4687->Lumber:5422->Lumber:6221->Lumber:5590->Lumber:7742->Lumber:7332->Lumber:3257->Lumber:7596->Lumber:2212->Lumber:6281->Lumber:3481->Lumber:5222->Lumber:2788->Lumber:7563->Lumber:2335->Lumber:4042->Steel:6152->Steel:2592->Steel:7967->Steel:8286->Steel:7521->Steel:8354->Steel:2650->Steel:9026->Steel:7958->Steel:7673->Steel:2929->Steel:2890->Steel:5897->Steel:9006->Steel:3718->Steel:3198->Steel:3481->Steel:3370->Steel:3456->Steel:5221->Steel:8017->Steel:2735->Stone:9101->Stone:5385->Stone:8221->Stone:2473->Stone:7170->Stone:5377->Stone:5284->Stone:5079->Stone:5867->Stone:2183->Stone:6386->Stone:8225->Stone:9553->Stone:7441->Stone:2820->Stone:8282->Stone:2272->Stone:7886->Stone:7681->Stone:8980->Stone:4400
+(Lacrosse)->Coal:2303->Coal:10000->Coal:8535->Coal:4666->Coal:2350->Coal:5148->Coal:8495->Coal:6101->Coal:5892->Coal:8790->Coal:4609->Coal:2760->Coal:5463->Coal:5716->Coal:3325->Crude Oil:8270->Crude Oil:5074->Crude Oil:2877->Crude Oil:5339->Crude Oil:2937->Crude Oil:7728->Crude Oil:8669->Crude Oil:4775->Crude Oil:5770->Crude Oil:6567->Crude Oil:6393->Crude Oil:8587->Crude Oil:8643->Crude Oil:8551->Crude Oil:3313->Crude Oil:6347->Crude Oil:5797->Ethanol:4303->Ethanol:3542->Ethanol:4057->Ethanol:2895->Ethanol:6770->Ethanol:7685->Ethanol:5039->Ethanol:7325->Ethanol:7669->Ethanol:8939->Ethanol:7378->Ethanol:3071->Ethanol:3864->Ethanol:4835->Ethanol:9892->Ethanol:7566->Ethanol:6037->Ethanol:5507->Ethanol:5339->Lumber:5440->Lumber:2898->Lumber:7211->Lumber:9409->Lumber:5648->Lumber:7684->Lumber:6388->Lumber:9271->Lumber:9097->Lumber:6658->Lumber:2209->Lumber:3697->Lumber:6574->Steel:7491->Steel:4055->Steel:4978->Steel:9057->Steel:6859->Steel:7209->Steel:3731->Steel:7142->Steel:3692->Steel:3864->Steel:6847->Steel:2932->Steel:2388->Steel:9340->Steel:2838->Steel:7870->Stone:6101->Stone:8579->Stone:7689->Stone:6159->Stone:4365->Stone:9985->Stone:9829->Stone:9899->Stone:7469->Stone:5308->Stone:5113->Stone:9248->Stone:6906
+============== HUB CONTROL ==============
+1. Handle a new train arrival
+2. Remove a Cargo car from a departing Train
+3. Get the Weight of a Cargo product from all the departing trains
+4. Depart a Train
+5. Depart All the Trains in Hub
+6. Display a departing Train
+7. Display All departing Trains in Hub
+8. Move matching cargo from src train to dst train
+9. Quit
+=========================================
+Command : 2
+Enter the Destination of the Train : green bay
+Enter the Cargo Name : coal
+============== HUB CONTROL ==============
+1. Handle a new train arrival
+2. Remove a Cargo car from a departing Train
+3. Get the Weight of a Cargo product from all the departing trains
+4. Depart a Train
+5. Depart All the Trains in Hub
+6. Display a departing Train
+7. Display All departing Trains in Hub
+8. Move matching cargo from src train to dst train
+9. Quit
+=========================================
+Command : 4
+Enter the Destination of the Train : abcd
+ERROR: Train for the destination not found (abcd)
+============== HUB CONTROL ==============
+1. Handle a new train arrival
+2. Remove a Cargo car from a departing Train
+3. Get the Weight of a Cargo product from all the departing trains
+4. Depart a Train
+5. Depart All the Trains in Hub
+6. Display a departing Train
+7. Display All departing Trains in Hub
+8. Move matching cargo from src train to dst train
+9. Quit
+=========================================
+Command : 4
+Enter the Destination of the Train : 1234
+ERROR: Train for the destination not found (1234)
+============== HUB CONTROL ==============
+1. Handle a new train arrival
+2. Remove a Cargo car from a departing Train
+3. Get the Weight of a Cargo product from all the departing trains
+4. Depart a Train
+5. Depart All the Trains in Hub
+6. Display a departing Train
+7. Display All departing Trains in Hub
+8. Move matching cargo from src train to dst train
+9. Quit
+=========================================
+Command : 4
+Enter the Destination of the Train : @123
+ERROR: Train for the destination not found (@123)
+============== HUB CONTROL ==============
+1. Handle a new train arrival
+2. Remove a Cargo car from a departing Train
+3. Get the Weight of a Cargo product from all the departing trains
+4. Depart a Train
+5. Depart All the Trains in Hub
+6. Display a departing Train
+7. Display All departing Trains in Hub
+8. Move matching cargo from src train to dst train
+9. Quit
+=========================================
+Command : 6
+Enter the Destination of the Train : chicago
+(Chicago)->Coal:3000->Coal:7922->Coal:7983->Coal:7206->Coal:8731->Coal:8154->Coal:4745->Coal:6145->Coal:8972->Coal:4931->Coal:8664->Coal:9504->Coal:7490->Coal:7151->Coal:4104->Coal:2969->Coal:4504->Coal:6858->Coal:8729->Coal:8494->Coal:4174->Coal:2709->Coal:7090->Coal:7122->Coal:6060->Coal:6845->Crude Oil:4951->Crude Oil:5573->Crude Oil:2302->Crude Oil:2028->Crude Oil:6037->Crude Oil:7812->Crude Oil:3788->Crude Oil:4842->Crude Oil:8916->Crude Oil:5367->Crude Oil:3975->Crude Oil:5736->Ethanol:4359->Ethanol:8196->Ethanol:3439->Ethanol:8953->Ethanol:9042->Ethanol:8806->Ethanol:4148->Ethanol:2136->Ethanol:8588->Ethanol:3446->Ethanol:4667->Ethanol:3326->Ethanol:8970->Ethanol:2192->Lumber:6510->Lumber:7505->Lumber:2300->Lumber:5516->Lumber:7604->Lumber:3215->Lumber:5390->Lumber:5275->Lumber:5228->Lumber:2208->Lumber:9342->Lumber:2006->Lumber:9824->Lumber:6481->Lumber:2706->Lumber:4764->Lumber:7615->Lumber:7888->Lumber:4638->Lumber:6254->Steel:5204->Steel:4834->Steel:5478->Steel:2908->Steel:2355->Steel:7406->Steel:3332->Steel:5308->Steel:3199->Steel:3047->Steel:9197->Steel:8781->Steel:9698->Steel:9684->Steel:7981->Stone:3009->Stone:6021->Stone:9281->Stone:5306->Stone:5627->Stone:4716->Stone:3476->Stone:3034->Stone:5726->Stone:4998->Stone:6044->Stone:2556->Stone:4988->Stone:8480->Stone:9856->Stone:5443->Stone:3890->Stone:2708->Stone:6539->Stone:8665->Stone:9482->Stone:2854
+============== HUB CONTROL ==============
+1. Handle a new train arrival
+2. Remove a Cargo car from a departing Train
+3. Get the Weight of a Cargo product from all the departing trains
+4. Depart a Train
+5. Depart All the Trains in Hub
+6. Display a departing Train
+7. Display All departing Trains in Hub
+8. Move matching cargo from src train to dst train
+9. Quit
+=========================================
+Command : 6
+Enter the Destination of the Train : @'123
+ERROR: Train for the destination not found (@'123)
+============== HUB CONTROL ==============
+1. Handle a new train arrival
+2. Remove a Cargo car from a departing Train
+3. Get the Weight of a Cargo product from all the departing trains
+4. Depart a Train
+5. Depart All the Trains in Hub
+6. Display a departing Train
+7. Display All departing Trains in Hub
+8. Move matching cargo from src train to dst train
+9. Quit
+=========================================
+Command : 7
+(Chicago)->Coal:3000->Coal:7922->Coal:7983->Coal:7206->Coal:8731->Coal:8154->Coal:4745->Coal:6145->Coal:8972->Coal:4931->Coal:8664->Coal:9504->Coal:7490->Coal:7151->Coal:4104->Coal:2969->Coal:4504->Coal:6858->Coal:8729->Coal:8494->Coal:4174->Coal:2709->Coal:7090->Coal:7122->Coal:6060->Coal:6845->Crude Oil:4951->Crude Oil:5573->Crude Oil:2302->Crude Oil:2028->Crude Oil:6037->Crude Oil:7812->Crude Oil:3788->Crude Oil:4842->Crude Oil:8916->Crude Oil:5367->Crude Oil:3975->Crude Oil:5736->Ethanol:4359->Ethanol:8196->Ethanol:3439->Ethanol:8953->Ethanol:9042->Ethanol:8806->Ethanol:4148->Ethanol:2136->Ethanol:8588->Ethanol:3446->Ethanol:4667->Ethanol:3326->Ethanol:8970->Ethanol:2192->Lumber:6510->Lumber:7505->Lumber:2300->Lumber:5516->Lumber:7604->Lumber:3215->Lumber:5390->Lumber:5275->Lumber:5228->Lumber:2208->Lumber:9342->Lumber:2006->Lumber:9824->Lumber:6481->Lumber:2706->Lumber:4764->Lumber:7615->Lumber:7888->Lumber:4638->Lumber:6254->Steel:5204->Steel:4834->Steel:5478->Steel:2908->Steel:2355->Steel:7406->Steel:3332->Steel:5308->Steel:3199->Steel:3047->Steel:9197->Steel:8781->Steel:9698->Steel:9684->Steel:7981->Stone:3009->Stone:6021->Stone:9281->Stone:5306->Stone:5627->Stone:4716->Stone:3476->Stone:3034->Stone:5726->Stone:4998->Stone:6044->Stone:2556->Stone:4988->Stone:8480->Stone:9856->Stone:5443->Stone:3890->Stone:2708->Stone:6539->Stone:8665->Stone:9482->Stone:2854
+(Eau Claire)->Coal:3702->Coal:4902->Coal:6973->Coal:3981->Coal:3714->Coal:5350->Coal:2981->Coal:4222->Coal:7132->Coal:9585->Coal:9130->Coal:6618->Coal:6329->Coal:6998->Coal:3899->Coal:5917->Coal:3479->Coal:4429->Coal:8310->Coal:3445->Coal:8983->Crude Oil:8206->Crude Oil:5302->Crude Oil:8542->Crude Oil:5831->Crude Oil:3030->Crude Oil:7043->Crude Oil:4233->Crude Oil:3114->Crude Oil:4893->Crude Oil:5204->Ethanol:7266->Ethanol:2965->Ethanol:8154->Ethanol:9631->Ethanol:9574->Ethanol:7256->Ethanol:4228->Ethanol:9571->Ethanol:2707->Ethanol:4459->Ethanol:7027->Ethanol:7753->Ethanol:4647->Ethanol:6017->Ethanol:7915->Ethanol:4789->Ethanol:4068->Ethanol:2901->Ethanol:9180->Ethanol:4883->Ethanol:7637->Ethanol:2326->Ethanol:8844->Lumber:3741->Lumber:9674->Lumber:4724->Lumber:2189->Lumber:2597->Lumber:3140->Lumber:6497->Lumber:7071->Lumber:2257->Lumber:9666->Lumber:4645->Lumber:2192->Lumber:9816->Lumber:5282->Lumber:5648->Steel:3458->Steel:9843->Steel:3634->Steel:6523->Steel:9172->Steel:7876->Steel:3688->Steel:2187->Steel:5648->Steel:6850->Steel:6422->Steel:2937->Steel:7236->Steel:4853->Steel:7869->Stone:5863->Stone:9721->Stone:6541->Stone:8817->Stone:4168->Stone:6273->Stone:5869->Stone:5818->Stone:3488->Stone:5407->Stone:5325->Stone:9618->Stone:4071->Stone:6276->Stone:9108->Stone:7083->Stone:8445->Stone:9896
+(Green Bay)->Coal:9986->Coal:9170->Coal:4658->Coal:3041->Coal:3787->Coal:8358->Coal:4389->Coal:5923->Coal:3182->Coal:7422->Coal:8255->Coal:5965->Coal:2374->Coal:8891->Coal:3592->Coal:7378->Coal:6241->Coal:9140->Crude Oil:6355->Crude Oil:6240->Crude Oil:8224->Crude Oil:2393->Crude Oil:5381->Crude Oil:4387->Crude Oil:7925->Crude Oil:8886->Crude Oil:3033->Crude Oil:3648->Crude Oil:8992->Crude Oil:6055->Crude Oil:5356->Crude Oil:3465->Crude Oil:6519->Crude Oil:4967->Crude Oil:8267->Crude Oil:2303->Crude Oil:9055->Crude Oil:2675->Crude Oil:2473->Ethanol:5236->Ethanol:2452->Ethanol:2906->Ethanol:7142->Ethanol:5940->Ethanol:3209->Ethanol:4643->Ethanol:8436->Ethanol:8498->Ethanol:2098->Ethanol:6132->Lumber:2732->Lumber:2785->Lumber:2949->Lumber:8866->Lumber:9126->Lumber:6323->Lumber:9898->Lumber:6266->Lumber:7175->Lumber:2606->Lumber:5493->Lumber:8100->Steel:4191->Steel:9067->Steel:4098->Steel:7596->Steel:7157->Steel:4191->Steel:7970->Steel:4490->Steel:9685->Steel:4496->Steel:2400->Steel:2747->Steel:2810->Steel:5265->Steel:3934->Steel:2315->Steel:7936->Steel:7630->Steel:2267->Steel:2910->Steel:7418->Stone:7430->Stone:2081->Stone:6959->Stone:9323->Stone:2212->Stone:8617->Stone:3598->Stone:3429->Stone:2701->Stone:3663->Stone:6903->Stone:4526->Stone:6016->Stone:6417
+(Milwaukee)->Coal:3820->Coal:7171->Coal:7349->Coal:9848->Coal:4038->Coal:3115->Coal:2149->Coal:2613->Coal:9656->Coal:8321->Coal:8770->Coal:7374->Crude Oil:6836->Crude Oil:6410->Crude Oil:6673->Crude Oil:3607->Crude Oil:8256->Crude Oil:9000->Crude Oil:9195->Crude Oil:4761->Crude Oil:2462->Crude Oil:3788->Crude Oil:5432->Crude Oil:5025->Crude Oil:9545->Crude Oil:8249->Crude Oil:7254->Crude Oil:7925->Crude Oil:7721->Ethanol:4684->Ethanol:9503->Ethanol:9702->Ethanol:9229->Ethanol:2413->Ethanol:7110->Ethanol:3908->Ethanol:6726->Ethanol:2825->Ethanol:9595->Ethanol:6653->Ethanol:6251->Ethanol:4385->Ethanol:6613->Ethanol:7268->Lumber:5821->Lumber:2236->Lumber:6626->Lumber:4687->Lumber:4148->Lumber:6994->Lumber:4311->Lumber:2064->Lumber:8721->Lumber:7312->Lumber:7344->Lumber:6834->Lumber:4788->Lumber:8542->Lumber:9290->Lumber:8026->Steel:7148->Steel:6182->Steel:9465->Steel:7160->Steel:4738->Steel:5585->Steel:9317->Steel:4446->Steel:7679->Steel:6046->Steel:3850->Steel:8720->Steel:4872->Steel:4995->Steel:9360->Steel:7367->Steel:5182->Stone:6323->Stone:8843->Stone:9981->Stone:7895->Stone:4227->Stone:5964->Stone:2741->Stone:5065->Stone:8720->Stone:3826->Stone:2818->Stone:3316->Stone:8775->Stone:7997->Stone:8687->Stone:2544->Stone:2575->Stone:5860->Stone:9754->Stone:8921->Stone:2388
+(Prairie du Chien)->Coal:4828->Coal:5502->Coal:7461->Coal:5721->Coal:6410->Coal:3490->Coal:4737->Coal:8675->Coal:5998->Coal:2196->Coal:7343->Coal:2518->Coal:2948->Coal:8457->Coal:7464->Coal:2361->Coal:4332->Coal:9821->Coal:2854->Crude Oil:6002->Crude Oil:6355->Crude Oil:7665->Crude Oil:4644->Crude Oil:9462->Crude Oil:7838->Crude Oil:9646->Crude Oil:3892->Crude Oil:6648->Crude Oil:7777->Crude Oil:9493->Crude Oil:7137->Crude Oil:3514->Crude Oil:9417->Crude Oil:3161->Crude Oil:4120->Crude Oil:2352->Crude Oil:9667->Crude Oil:9344->Ethanol:4161->Ethanol:7694->Ethanol:6612->Ethanol:6458->Ethanol:6800->Ethanol:5417->Ethanol:2056->Ethanol:6808->Ethanol:4809->Lumber:3254->Lumber:9905->Lumber:8527->Lumber:5585->Lumber:7595->Lumber:8382->Lumber:3754->Lumber:8713->Lumber:6681->Lumber:3346->Lumber:5921->Lumber:7096->Steel:3428->Steel:3381->Steel:4833->Steel:8230->Steel:9605->Steel:3753->Steel:9062->Steel:8363->Steel:7587->Steel:6611->Steel:8055->Steel:4306->Steel:5503->Steel:5266->Steel:5942->Steel:9683->Steel:6566->Steel:5074->Steel:5150->Steel:9380->Steel:4304->Stone:7084->Stone:4472->Stone:5075->Stone:3193->Stone:9596->Stone:5050->Stone:5529->Stone:6217->Stone:9843->Stone:5107->Stone:9115->Stone:7858->Stone:6912->Stone:9536->Stone:9196->Stone:5168->Stone:4877
+(Oconomowoc)->Coal:2125->Coal:5460->Coal:7918->Coal:6107->Coal:3129->Coal:6671->Coal:8653->Coal:5631->Coal:5109->Coal:2991->Coal:7865->Coal:9096->Coal:8698->Coal:9249->Coal:8307->Coal:7740->Coal:8204->Coal:6091->Coal:3458->Coal:6833->Coal:7814->Coal:6840->Coal:2700->Coal:9961->Coal:7556->Coal:9983->Crude Oil:5844->Crude Oil:5811->Crude Oil:9511->Crude Oil:9513->Crude Oil:9670->Crude Oil:3167->Crude Oil:4561->Crude Oil:5118->Crude Oil:9625->Crude Oil:3137->Crude Oil:8769->Crude Oil:9775->Crude Oil:2148->Crude Oil:9087->Crude Oil:2850->Crude Oil:3975->Crude Oil:7387->Ethanol:8691->Ethanol:8024->Ethanol:4468->Ethanol:5446->Ethanol:5356->Ethanol:2498->Ethanol:2353->Ethanol:4129->Ethanol:3097->Ethanol:7689->Ethanol:8780->Ethanol:2165->Ethanol:4261->Ethanol:4989->Ethanol:9965->Ethanol:7547->Lumber:7352->Lumber:4687->Lumber:5422->Lumber:6221->Lumber:5590->Lumber:7742->Lumber:7332->Lumber:3257->Lumber:7596->Lumber:2212->Lumber:6281->Lumber:3481->Lumber:5222->Lumber:2788->Lumber:7563->Lumber:2335->Lumber:4042->Steel:6152->Steel:2592->Steel:7967->Steel:8286->Steel:7521->Steel:8354->Steel:2650->Steel:9026->Steel:7958->Steel:7673->Steel:2929->Steel:2890->Steel:5897->Steel:9006->Steel:3718->Steel:3198->Steel:3481->Steel:3370->Steel:3456->Steel:5221->Steel:8017->Steel:2735->Stone:9101->Stone:5385->Stone:8221->Stone:2473->Stone:7170->Stone:5377->Stone:5284->Stone:5079->Stone:5867->Stone:2183->Stone:6386->Stone:8225->Stone:9553->Stone:7441->Stone:2820->Stone:8282->Stone:2272->Stone:7886->Stone:7681->Stone:8980->Stone:4400
+(Lacrosse)->Coal:2303->Coal:10000->Coal:8535->Coal:4666->Coal:2350->Coal:5148->Coal:8495->Coal:6101->Coal:5892->Coal:8790->Coal:4609->Coal:2760->Coal:5463->Coal:5716->Coal:3325->Crude Oil:8270->Crude Oil:5074->Crude Oil:2877->Crude Oil:5339->Crude Oil:2937->Crude Oil:7728->Crude Oil:8669->Crude Oil:4775->Crude Oil:5770->Crude Oil:6567->Crude Oil:6393->Crude Oil:8587->Crude Oil:8643->Crude Oil:8551->Crude Oil:3313->Crude Oil:6347->Crude Oil:5797->Ethanol:4303->Ethanol:3542->Ethanol:4057->Ethanol:2895->Ethanol:6770->Ethanol:7685->Ethanol:5039->Ethanol:7325->Ethanol:7669->Ethanol:8939->Ethanol:7378->Ethanol:3071->Ethanol:3864->Ethanol:4835->Ethanol:9892->Ethanol:7566->Ethanol:6037->Ethanol:5507->Ethanol:5339->Lumber:5440->Lumber:2898->Lumber:7211->Lumber:9409->Lumber:5648->Lumber:7684->Lumber:6388->Lumber:9271->Lumber:9097->Lumber:6658->Lumber:2209->Lumber:3697->Lumber:6574->Steel:7491->Steel:4055->Steel:4978->Steel:9057->Steel:6859->Steel:7209->Steel:3731->Steel:7142->Steel:3692->Steel:3864->Steel:6847->Steel:2932->Steel:2388->Steel:9340->Steel:2838->Steel:7870->Stone:6101->Stone:8579->Stone:7689->Stone:6159->Stone:4365->Stone:9985->Stone:9829->Stone:9899->Stone:7469->Stone:5308->Stone:5113->Stone:9248->Stone:6906
+============== HUB CONTROL ==============
+1. Handle a new train arrival
+2. Remove a Cargo car from a departing Train
+3. Get the Weight of a Cargo product from all the departing trains
+4. Depart a Train
+5. Depart All the Trains in Hub
+6. Display a departing Train
+7. Display All departing Trains in Hub
+8. Move matching cargo from src train to dst train
+9. Quit
+=========================================
+Command : 6
+Enter the Destination of the Train : green        bay
+ERROR: Train for the destination not found (green        bay)
+============== HUB CONTROL ==============
+1. Handle a new train arrival
+2. Remove a Cargo car from a departing Train
+3. Get the Weight of a Cargo product from all the departing trains
+4. Depart a Train
+5. Depart All the Trains in Hub
+6. Display a departing Train
+7. Display All departing Trains in Hub
+8. Move matching cargo from src train to dst train
+9. Quit
+=========================================
+Command : 3
+Enter the Cargo Name : Fruit
+ERROR: Cargo not found (Fruit)
+============== HUB CONTROL ==============
+1. Handle a new train arrival
+2. Remove a Cargo car from a departing Train
+3. Get the Weight of a Cargo product from all the departing trains
+4. Depart a Train
+5. Depart All the Trains in Hub
+6. Display a departing Train
+7. Display All departing Trains in Hub
+8. Move matching cargo from src train to dst train
+9. Quit
+=========================================
+Command : 
